@@ -114,7 +114,7 @@
                     <button name="action_init" string="Previous" type="object" />
                     <button name="action_update_records" string="Create/Update" type="object" class="oe_highlight" />
                 </span>
-                <span states="init,ready">or</span>
+                <span states="init,ready"> or </span>
                 <button special="cancel" string="Close" class="oe_link" />
             </footer>
         </form>
