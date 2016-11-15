@@ -16,7 +16,7 @@
               "Serv. Tecnol. Avanzados - Pedro M. Baeza, "
               "ACSONE A/V, "
               "Tecnativa, "
-              "BCIM sprl, "
+              "BCIM,"
               "Odoo Community Association (OCA)",
     'website': "http://odoo-community.org",
     'depends': ["account"],
