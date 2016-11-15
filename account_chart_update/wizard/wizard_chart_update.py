@@ -5,6 +5,7 @@
 # © 2013 Joaquin Gutierrez (http://www.gutierrezweb.es)
 # © 2015 Antonio Espinosa <antonioea@tecnativa.com>
 # © 2016 Jairo Llopis <jairo.llopis@tecnativa.com>
+# © 2016 Jacques-Etienne Baudoux <je@bcim.be>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields, api, exceptions, _, tools
@@ -576,6 +577,7 @@ class WizardUpdateChartsAccounts(models.TransientModel):
             # Create tax
             if wiz_tax.type == 'new':
                 tax = template._generate_tax(self.company_id)
+                tax = tax['tax_template_to_tax'][template.id]
                 _logger.debug(_("Created tax %s."), template.name)
 
             # Update tax
