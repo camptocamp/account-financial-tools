@@ -62,6 +62,7 @@ Contributors
 * Stéphane Bidoul <stephane.bidoul@acsone.eu>
 * Antonio Espinosa <antonioea@antiun.com>
 * Jairo Llopis <jairo.llopis@tecnativa.com>
+* Jacques-Etienne Baudoux <je@bcim.be>
 
 Maintainer
 ----------
