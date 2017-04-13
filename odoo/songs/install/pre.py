@@ -16,7 +16,7 @@ from ..common import req
 def setup_company(ctx):
     """ Setup company """
     # load logo on company
-    logo_content = resource_string(req, 'data/images/company_main_logo.png')
+    logo_content = resource_string(req, 'data/images/mt-logo-b.png')
     b64_logo = b64encode(logo_content)
 
     values = {
