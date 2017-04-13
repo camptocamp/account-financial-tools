@@ -21,6 +21,12 @@ latest (unreleased)
 
 *Features and Improvements*
 
+* Setup company information
+* Setup company logo
+* Install german and french languages
+* Activate multicurrency
+
+
 *Bugfixes*
 
 *Build*
