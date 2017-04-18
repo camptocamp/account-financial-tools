@@ -9,47 +9,38 @@ from pkg_resources import resource_string
 
 import anthem
 
-from anthem.lyrics.records import create_or_update
-
 from ..common import req
 
 
 @anthem.log
 def setup_company(ctx):
     """ Setup company """
-    company = ctx.env.ref('base.main_company')
-    company.name = 'Meteotest'
-
     # load logo on company
-    logo_content = resource_string(req, 'data/images/company_main_logo.png')
+    logo_content = resource_string(req, 'data/images/mt-logo-b.png')
     b64_logo = b64encode(logo_content)
-    company.logo = b64_logo
 
-    with ctx.log(u'Configuring company'):
-        values = {
-            'name': "Meteotest",
-            'street': "",
-            'zip': "",
-            'city': "",
-            'country_id': ctx.env.ref('base.ch').id,
-            'phone': "+41 00 000 00 00",
-            'fax': "+41 00 000 00 00",
-            'email': "contact@meteotest.ch",
-            'website': "http://www.meteotest.ch",
-            'vat': "VAT",
-            'parent_id': company.id,
-            'logo': b64_logo,
-            'currency_id': ctx.env.ref('base.CHF').id,
-        }
-        create_or_update(ctx, 'res.company',
-                         'scenario.meteotest_ch',
-                         values)
+    values = {
+        'name': "Genossenschaft Meteotest",
+        'street': "Fabrikstrasse 14",
+        'zip': "3012",
+        'city': "Bern",
+        'country_id': ctx.env.ref('base.ch').id,
+        'phone': "+41 31 307 26 26",
+        'fax': "+41 31 307 26 10",
+        'email': "office@meteotest.ch",
+        'website': "http://www.meteotest.ch",
+        'vat': "CHE-108.019.245 MWST",
+        'registry': 'CHE-108.019.245',
+        'logo': b64_logo,
+        'currency_id': ctx.env.ref('base.CHF').id,
+    }
+    ctx.env.ref('base.main_company').write(values)
 
 
 @anthem.log
 def setup_language(ctx):
     """ Installing language and configuring locale formatting """
-    for code in ('fr_FR',):
+    for code in ('fr_FR', 'de_DE'):
         ctx.env['base.language.install'].create({'lang': code}).lang_install()
     ctx.env['res.lang'].search([]).write({
         'grouping': [3, 0],
