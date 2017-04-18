@@ -40,3 +40,6 @@
 [submodule "odoo/external-src/bank-statement-reconcile"]
 	path = odoo/external-src/bank-statement-reconcile
 	url = git@github.com:OCA/bank-statement-reconcile.git
+[submodule "odoo/external-src/odoo-cloud-platform"]
+	path = odoo/external-src/odoo-cloud-platform
+	url = git@github.com:camptocamp/odoo-cloud-platform.git

@@ -27,6 +27,7 @@ latest (unreleased)
 * Activate multicurrency
 * Sales configuration
 * Install chart of accounts
+* Setup odoo cloud platform
 
 
 *Bugfixes*
