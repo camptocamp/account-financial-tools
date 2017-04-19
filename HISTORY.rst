@@ -25,6 +25,7 @@ latest (unreleased)
 * Setup company logo
 * Install german and french languages
 * Activate multicurrency
+* Sales configuration
 
 
 *Bugfixes*
