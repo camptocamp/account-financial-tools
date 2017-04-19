@@ -19,6 +19,7 @@ ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/account-financial-tools, \
   /opt/odoo/external-src/account-invoicing, \
   /opt/odoo/external-src/bank-payment, \
+  /opt/odoo/external-src/bank-statement-reconcile, \
   /opt/odoo/external-src/l10n-switzerland, \
   /opt/odoo/external-src/operating-unit, \
   /opt/odoo/external-src/partner-contact, \
