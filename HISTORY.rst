@@ -26,6 +26,7 @@ latest (unreleased)
 * Install german and french languages
 * Activate multicurrency
 * Sales configuration
+* Install chart of accounts
 
 
 *Bugfixes*
