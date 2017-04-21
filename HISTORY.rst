@@ -34,4 +34,6 @@ latest (unreleased)
 
 *Build*
 
+* Import product.template in DEMO mode
+
 *Documentation*

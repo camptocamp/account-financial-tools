@@ -1,0 +1,7 @@
+id,name,default_code,sale_ok,purchase_ok,can_be_expensed,type,uom_id/id,uom_po_id/id,list_price,standard_price,track_service,taxes_id/id,supplier_taxes_id/id
+__demo__.product_template_meteo-00,Mittelansatz,meteo-00,True,False,False,service,product.product_uom_day,product.product_uom_day,162,,task,l10n_ch.1_vat_80,l10n_ch.1_vat_80_purchase_incl
+__demo__.product_template_meteo-01,Software-Entwicklung,meteo-01,True,False,False,service,product.product_uom_day,product.product_uom_day,182,,task,l10n_ch.1_vat_80,l10n_ch.1_vat_80_purchase_incl
+__demo__.product_template_meteo-02,Expertenarbeit,meteo-02,True,False,False,service,product.product_uom_day,product.product_uom_day,182,,task,l10n_ch.1_vat_80,l10n_ch.1_vat_80_purchase_incl
+__demo__.product_template_meteo-03,Feldarbeiit,meteo-03,True,False,False,service,product.product_uom_day,product.product_uom_day,133,,task,l10n_ch.1_vat_80,l10n_ch.1_vat_80_purchase_incl
+__demo__.product_template_meteo-04,Prognoseschicht,meteo-04,True,False,False,service,product.product_uom_day,product.product_uom_day,220,,task,l10n_ch.1_vat_80,l10n_ch.1_vat_80_purchase_incl
+__demo__.product_template_meteo-ma,Mitarbeiter,meteo-ma,True,False,False,service,product.product_uom_day,product.product_uom_day,162,,task,l10n_ch.1_vat_80,l10n_ch.1_vat_80_purchase_incl
