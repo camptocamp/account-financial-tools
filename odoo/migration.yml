@@ -1,5 +1,6 @@
 migration:
   options:
+    install_args: --load=web,web_kanban,session_redis,attachment_s3,logging_json
     install_command: odoo
   versions:
     - version: 10.0.0
@@ -7,8 +8,8 @@ migration:
         pre:
           - anthem songs.install.pre::main
         post:
-#          - anthem openerp.addons.cloud_platform.songs::install_exoscale
           - anthem songs.install.user::main
+          - anthem openerp.addons.cloud_platform.songs::install_exoscale
           - anthem songs.install.accounting::main
 #          - anthem songs.install.logistics::main
           - anthem songs.install.data_all::main
@@ -94,5 +95,7 @@ migration:
           - date_range
           - mass_editing
           - server_environment
+          #### camptocamp
+          - cloud_platform
           #### local-src
           # - my_addon
