@@ -20,6 +20,13 @@ def import_customers(ctx):
 
 
 @anthem.log
+def import_products(ctx):
+    """ Importing product.template from csv """
+    load_csv(ctx, 'data/demo/product.template.csv', 'product.template')
+
+
+@anthem.log
 def main(ctx):
     """ Loading demo data """
     import_customers(ctx)
+    import_products(ctx)
