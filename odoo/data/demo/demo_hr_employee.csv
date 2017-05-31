@@ -1,0 +1,4 @@
+id,name,user_id/id
+__demo__.hr_employee_bs,Schaffner Beat,__demo__.res_users_bs
+__demo__.hr_employee_rc,Cattin René,__demo__.res_users_rc
+__demo__.hr_employee_cs,Schilter Christoph,__demo__.res_users_cs

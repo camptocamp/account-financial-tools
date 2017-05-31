@@ -21,6 +21,10 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* [BSMET-55] Language "Italian/Italiano" - set to active (update res.lang)
+
+* [BSMET-56] Install DEMO data
+
 **Bugfixes**
 
 **Build**
