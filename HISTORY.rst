@@ -33,6 +33,9 @@ Latest (unreleased)
 
 * upgrade Docker base image to camptocam/odoo-project:10.0-2.2.0
 * Update odoo-cloud-platform to have Redis Sentinel support
+* Sync from odoo-template
+* Load entrypoint to remove enterprise key on envs != prod
+* Load entrypoint to be able to use a database containing S3 attachments
 
 **Documentation**
 
