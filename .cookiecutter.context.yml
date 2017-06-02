@@ -1,0 +1,7 @@
+customer_name: roctool
+odoo_version: '10.0'
+customer_shortname: roctool
+repo_name: roctool
+project_id: '1900'
+project_name: roctool_odoo
+odoo_company_name: Roctool
