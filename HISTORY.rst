@@ -24,6 +24,7 @@ Latest (unreleased)
 
 * Add new submodule OCA/account-analytic & Install analytic_tag_dimension
 * Install dimensions and tags data for account.analytic
+* Only admin can CUD others can R for account.analytic dimensions/tags
 
 **Bugfixes**
 
