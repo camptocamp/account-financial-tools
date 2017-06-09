@@ -22,6 +22,7 @@ ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/hr-timesheet, \
   /opt/odoo/external-src/intrastat, \
   /opt/odoo/external-src/project, \
+  /opt/odoo/external-src/account-analytic, \
   /opt/odoo/local-src," \
   LIMIT_TIME_CPU=86400 \
   LIMIT_TIME_REAL=86400 \
