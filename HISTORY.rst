@@ -23,6 +23,7 @@ Latest (unreleased)
 **Features and Improvements**
 
 * Add new submodule OCA/account-analytic & Install analytic_tag_dimension
+* Install dimensions and tags data for account.analytic
 
 **Bugfixes**
 

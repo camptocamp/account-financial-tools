@@ -197,3 +197,6 @@ migration:
       addons:
         upgrade:
           - analytic_tag_dimension
+      operations:
+        post:
+          - anthem songs.upgrade.10_0_17.account_analytic_dimension::main
