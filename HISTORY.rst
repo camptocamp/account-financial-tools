@@ -22,9 +22,13 @@ Latest (unreleased)
 
 **Features and Improvements**
 
-* Add new submodule OCA/account-analytic & Install analytic_tag_dimension
-* Install dimensions and tags data for account.analytic
-* Only admin can CUD others can R for account.analytic dimensions/tags
+* Add new submodule OCA/account-analytic & Install analytic_tag_dimension BSRTL-211
+* Install dimensions and tags data for account.analytic BSRTL-211
+* Only admin can CUD others can R for account.analytic dimensions/tags BSRTL-211
+* Add analytic tag on hr.department,hr.employee BSRTL-212
+* Make analytic tag required on soline, poline, invline BSRTL-212
+* Use employee's tag when creating analytic.line from expense BSRTL-212
+* Force tag of employee into timesheet BSRTL-212
 
 **Bugfixes**
 
