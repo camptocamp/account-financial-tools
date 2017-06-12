@@ -18,6 +18,7 @@
     "data": [
         'views/department_views.xml',
         'views/employee_views.xml',
+        'security/ir.model.access.csv',
     ],
     'installable': True,
 }
