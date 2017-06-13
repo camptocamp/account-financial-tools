@@ -2,38 +2,14 @@
 # please see docs in docs/how-to-integrate-pull-request.md
 #
 # Examples:
-./external-src/server-tools:
-  remotes:
-    oca: git@github.com:OCA/server-tools.git
-    camptocamp: git@github.com:camptocamp/server-tools.git
-  merges:
-    - oca 10.0
-      # Migration of server_environment to 10.0
-    - oca refs/pull/595/head
-  target: &default_target camptocamp merge-branch-1900-master
 ./external-src/sale-workflow:
   remotes:
     oca: git@github.com:OCA/sale-workflow.git
     camptocamp: git@github.com:camptocamp/sale-workflow.git
   merges:
     - oca 10.0
-#     # port account_mass_reconcile
-    - oca refs/pull/396/head
-#     # add sale_layout_hidden
-    - oca refs/pull/440/head
-#     # port of account_statement_base_import
-#     - oca refs/pull/137/head
       # new module sale_company_currency
     - oca refs/pull/425/head
       # new module sale_project_fixed_price_task_completed_invoicing
     - oca refs/pull/485/head
-  target: *default_target
-./external-src/hr:
-  remotes:
-    oca: git@github.com:OCA/hr.git
-    camptocamp: git@github.com:camptocamp/hr.git
-  merges:
-    - oca 10.0
-    # hr_employee_seniority
-    # - oca refs/pull/319/head
-  target: *default_target
+  target: &default_target camptocamp merge-branch-1900-master
