@@ -14,6 +14,8 @@
         'sale_timesheet',
         'website_sale_options',
         'mrp',
+        'analytic_tag_dimension',
+        'analytic',
     ],
     "author": "Camptocamp,Odoo Community Association (OCA)",
     "website": "http://www.camptocamp.com",

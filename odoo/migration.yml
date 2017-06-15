@@ -193,3 +193,11 @@ migration:
         upgrade:
           - specific_subscription
           - sale_project_fixed_price_task_completed_invoicing
+    - version: 10.0.17
+      addons:
+        upgrade:
+          - analytic_tag_dimension
+          - specific_sale
+      operations:
+        post:
+          - anthem songs.upgrade.10_0_17.account_analytic_dimension::main
