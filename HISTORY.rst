@@ -29,6 +29,14 @@ Latest (unreleased)
 **Documentation**
 
 
+10.0.18 (2017-06-16)
+++++++++++++++++++++
+
+**Bugfixes**
+
+* fix issues with the second analytic axis
+
+
 10.0.17 (2017-06-15)
 ++++++++++++++++++++
 
