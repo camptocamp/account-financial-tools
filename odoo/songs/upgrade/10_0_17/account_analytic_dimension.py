@@ -21,10 +21,10 @@ def create_dimensions(ctx):
     tag_names = [('Admin', 'analytic_tag_admin'),
                  ('R&D', 'analytic_tag_rd'),
                  ('Sales & mkg', 'analytic_tag_sales_marketing'),
-                 ('Sales', 'analytic_tag_sales'),
                  ('Composite', 'analytic_tag_composite'),
                  ('Engineering', 'analytic_tag_engineering'),
                  ('Process', 'analytic_tag_process'),
+                 ('Process', 'analytic_tag_system'),
                  ]
     for tag, tag_xmlid in tag_names:
         tags_vals = {

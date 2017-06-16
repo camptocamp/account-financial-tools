@@ -12,6 +12,9 @@ class AccountAnalyticLine(models.Model):
     @api.multi
     def write(self, vals):
         for line in self:
+            if line.move_id or vals.get('move_id'):
+                # if we have a move line, then it is not a timesheet line
+                continue
             # We are assuming there is one employee per user
             employee_id = self.env['res.users'].browse(
                 self.env.uid).employee_ids[0]
