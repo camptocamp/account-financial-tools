@@ -201,3 +201,7 @@ migration:
       operations:
         post:
           - anthem songs.upgrade.10_0_17.account_analytic_dimension::main
+    - version: 10.0.18
+      addons:
+        upgrade:
+          - specific_analytic_tag_dimension
