@@ -24,12 +24,6 @@ env:
     - secure: "QUc3e1+s9jI8Z/L2GuuOqNIRKDchPbtuiALhJFsiJZt8xTxUOGMrbPTizUsQLZdOYlIbhZvXR2lbDbDu/5q/tPlBp8GLAbeFauBW48qZp4jo6Z/StStYn8OFQDiS8AcUqJDBS2U2rjOefhpjqLweiGv7tPyl2vgTZ0fRNp5kzIXVDRXFPPrXuItY+SX4lb/DwV6g6i4OnKM9dqp/Xrlu6pyza1iHPwRsQ+FoKFQ+7tKGT9UCsXmJugWEPgWTy5JQpaZEanFXqzZTLZlBpiRgrVdoyKwKDPMQuoJRmXI5M8VN+1tmM/ajD72GIPkOrJ36kZEMT88FUGtd4Nj6ablgC4eChHaHEzexNbNmoEaO41QKbkpxQrUw57329ChNdMk4XM6V9u4JRoH8u53mhMYKk0iPMkamAXgTkBszDRSY439qULICjI+HhSq1ao9ZdXwTTn8gVbMsfxttXfuA6Qsgxm1aXZYkX+tx8DTjew0LU1I+AYF6KugiMbdpTDEXas8BJJgSXRFXM11d3edjSGUiOepmNP0sQI4EANgaL15Kk7Ckvbg02hiLxuUGV3tDzi7COR6E0Q3+RDgPH/2LTDxOowjImaRrzzSkpLIJLs9MyuwX226eushVnrpraNRzxqQuVrkH4enHpe/KD4Gn/kxiKXvZMxNi3Ksc5nmwORPdXgM="
 
 before_install:
-  - sudo apt-get update
-  - sudo DEBIAN_FRONTEND=noninteractive apt-get install -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" docker-engine --yes --force-yes
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
   - git config --global user.name "TravisCI"
   - git config --global user.email "travis@camptocamp.com"
   - if [ "$LINT_CHECK" == "1" ] ; then pip install --user -q flake8 ; fi
