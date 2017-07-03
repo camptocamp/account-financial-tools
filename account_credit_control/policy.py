@@ -239,8 +239,10 @@ class CreditControlPolicyLevel(models.Model):
     custom_text = fields.Text(string='Custom Message',
                               required=True,
                               translate=True)
-    custom_mail_text = fields.Text(string='Custom Mail Message',
+    custom_mail_text = fields.Html(string='Custom Mail Message',
                                    required=True, translate=True)
+    custom_text_after_details = fields.Text(
+        string='Custom Message after details', translate=True)
 
     _sql_constraint = [('unique level',
                         'UNIQUE (policy_id, level)',
