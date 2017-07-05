@@ -205,3 +205,7 @@ migration:
       addons:
         upgrade:
           - specific_analytic_tag_dimension
+    - version: 10.0.19
+      addons:
+        upgrade:
+          - base
