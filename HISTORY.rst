@@ -22,6 +22,8 @@ Latest (unreleased)
 
 **Features and Improvements**
 
+* Add related product_category on account.move.line BSRTL-216
+
 **Bugfixes**
 
 **Build**
