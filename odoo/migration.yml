@@ -209,3 +209,4 @@ migration:
       addons:
         upgrade:
           - base
+          - hs_code_link
