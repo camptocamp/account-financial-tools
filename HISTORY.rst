@@ -32,6 +32,7 @@ Latest (unreleased)
 * Load entrypoint to remove enterprise key on envs != prod
 * Load entrypoint to be able to use a database containing S3 attachments
 * Update to Docker image 10.0-2.3.0 & update src
+* Update pending-merge for intrastat BSRTL217
 
 **Documentation**
 
