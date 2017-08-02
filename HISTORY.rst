@@ -26,6 +26,8 @@ Latest (unreleased)
 
 **Bugfixes**
 
+* Add hs_code_link to fix double hs_code BSRTL-217
+
 **Build**
 
 * Sync from odoo-template
