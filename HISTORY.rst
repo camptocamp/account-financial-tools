@@ -22,6 +22,18 @@ Latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.0.19 (2017-08-04)
+++++++++++++++++++++
+
+**Features and Improvements**
+
 * Add related product_category on account.move.line BSRTL-216
 
 **Bugfixes**
