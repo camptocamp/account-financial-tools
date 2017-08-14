@@ -21,3 +21,8 @@ mrp.access_product_category_mrp_manager,product.category mrp_manager,product.mod
 purchase.access_product_category_purchase_manager,product.category purchase_manager,product.model_product_category,purchase.group_purchase_manager,1,0,0,0
 mrp.access_mrp_bom_manager,mrp.bom.manager,mrp.model_mrp_bom,mrp.group_mrp_manager,1,0,0,0
 mrp.access_mrp_bom_line_manager,mrp.bom.line.manager,mrp.model_mrp_bom_line,mrp.group_mrp_manager,1,0,0,0
+product_template_manager,specific.security.product.template.manager,product.model_product_template,specific_security.rtl_prd_mngr,1,1,1,1
+product_product_manager,specific.security.product.product.manager,product.model_product_product,specific_security.rtl_prd_mngr,1,1,1,1
+product_category_manager,specific.security.product.category.manager,product.model_product_category,specific_security.rtl_prd_mngr,1,1,1,1
+mrp_bom_manager,specific.security.mrp.bom.manager,mrp.model_mrp_bom,specific_security.rtl_prd_mngr,1,1,1,1
+mrp_bom_line_manager,specific.security.mrp.bom.line.manager,mrp.model_mrp_bom_line,specific_security.rtl_prd_mngr,1,1,1,1

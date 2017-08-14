@@ -19,6 +19,7 @@
     "license": "GPL-3 or any later version",
     "category": "Sale",
     "data": [
+        'data/res_groups_data.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,
