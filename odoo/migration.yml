@@ -210,3 +210,7 @@ migration:
         upgrade:
           - base
           - hs_code_link
+    - version: 10.0.20
+      addons:
+        upgrade:
+          - roctool_reports

@@ -22,6 +22,8 @@ Latest (unreleased)
 
 **Features and Improvements**
 
+* Custom SO name label for pdf reports BSRTL223
+
 **Bugfixes**
 
 **Build**

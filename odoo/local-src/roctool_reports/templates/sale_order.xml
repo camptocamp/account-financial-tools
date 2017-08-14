@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="report_saleorder_document_specific"
+            inherit_id="sale.report_saleorder_document">
+    <xpath expr="//div[@class='page']/h2/span" position="replace">
+      <span t-if="doc.state not in ['draft','sent']">Sale order confirmation # </span>
+    </xpath>
+  </template>
+</odoo>
