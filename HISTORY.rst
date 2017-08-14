@@ -24,6 +24,7 @@ Latest (unreleased)
 
 * Custom SO name label for pdf reports BSRTL223
 * Field for incoterm on stock.picking BSRTL221
+* remove CUD access to product.template, product.product, product.category, mrp.bom to all groups BSRTL219
 
 **Bugfixes**
 

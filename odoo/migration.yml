@@ -215,3 +215,4 @@ migration:
         upgrade:
           - roctool_reports
           - specific_sale
+          - specific_security
