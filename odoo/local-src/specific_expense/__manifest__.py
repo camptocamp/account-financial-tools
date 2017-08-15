@@ -5,6 +5,7 @@
     "name": "RocTool specific expense",
     "version": "10.0.1.0.0",
     "depends": ['hr',
+                'hr_expense',
                 ],
     "author": "Camptocamp",
     "website": "http://www.camptocamp.com",
@@ -12,6 +13,7 @@
     "category": "Expense",
     "data": ['data/res_partner_category.xml',
              'views/employee_views.xml',
+             'views/hr_expense.xml',
              ],
     'installable': True,
 }
