@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <menuitem id="sales_team.menu_sale_report"
+            name="Reports" parent="sales_team.menu_base_partner" sequence="99"
+            groups="sales_team.group_sale_salesman_all_leads"/>
+
+</odoo>

@@ -216,3 +216,5 @@ migration:
           - roctool_reports
           - specific_sale
           - specific_security
+          - web_environment_ribbon
+          - server_environment_ir_config_parameter
