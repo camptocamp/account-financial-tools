@@ -10,3 +10,4 @@ from . import mrp_bom
 from . import project_task
 from . import procurement_order
 from . import account_analytic_account
+from . import stock_picking

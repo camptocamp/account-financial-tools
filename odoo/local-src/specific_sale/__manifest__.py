@@ -27,6 +27,7 @@
         'views/project_task.xml',
         'views/mrp_bom.xml',
         'views/so_mail_template.xml',
+        'views/stock_picking.xml',
         'data/res_groups_data.xml',
         'security/ir.model.access.csv',
     ],

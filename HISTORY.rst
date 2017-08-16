@@ -23,6 +23,7 @@ Latest (unreleased)
 **Features and Improvements**
 
 * Custom SO name label for pdf reports BSRTL223
+* Field for incoterm on stock.picking BSRTL221
 
 **Bugfixes**
 

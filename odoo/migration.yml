@@ -214,3 +214,4 @@ migration:
       addons:
         upgrade:
           - roctool_reports
+          - specific_sale
