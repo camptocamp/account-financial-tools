@@ -218,3 +218,5 @@ migration:
           - specific_security
           - web_environment_ribbon
           - server_environment_ir_config_parameter
+          - dj_compilation_account
+          - dj_compilation_stock
