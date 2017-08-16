@@ -28,6 +28,7 @@
         'views/mrp_bom.xml',
         'views/so_mail_template.xml',
         'views/stock_picking.xml',
+        'views/sale_order.xml',
         'data/res_groups_data.xml',
         'security/ir.model.access.csv',
     ],

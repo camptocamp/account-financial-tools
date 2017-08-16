@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <record id="rtl_prd_mngr" model="res.groups">
+    <field name="name">Roctool Product Manager</field>
+    <field name="users" eval="[(4, ref('base.user_root'))]"/>
+  </record>
+
+</odoo>

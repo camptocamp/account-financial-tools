@@ -32,3 +32,7 @@
 	path = odoo/external-src/account-analytic
 	url = git@github.com:OCA/account-analytic.git
 	branch = 10.0
+[submodule "odoo/external-src/web"]
+	path = odoo/external-src/web
+	url = https://github.com/OCA/web.git
+	branch = 10.0

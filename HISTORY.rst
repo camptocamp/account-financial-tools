@@ -24,6 +24,8 @@ Latest (unreleased)
 
 * Custom SO name label for pdf reports BSRTL223
 * Field for incoterm on stock.picking BSRTL221
+* remove CUD access to product.template, product.product, product.category, mrp.bom to all groups BSRTL219
+* add a new technical group called "Roctool Product Manager" who can CRUD product.template, product.product, product.category and mrp.bom BSRTL219
 
 **Bugfixes**
 
