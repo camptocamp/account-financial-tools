@@ -24,7 +24,7 @@ def create_dimensions(ctx):
                  ('Composite', 'analytic_tag_composite'),
                  ('Engineering', 'analytic_tag_engineering'),
                  ('Process', 'analytic_tag_process'),
-                 ('Process', 'analytic_tag_system'),
+                 ('System', 'analytic_tag_system'),
                  ]
     for tag, tag_xmlid in tag_names:
         tags_vals = {
