@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <record id="view_expenses_tree_specific" model="ir.ui.view">
+    <field name="name">hr.expense.tree.specific</field>
+    <field name="model">hr.expense</field>
+    <field name="inherit_id" ref="hr_expense.view_expenses_tree"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='analytic_account_id']" position="after">
+        <field name="reference"/>
+        <field name="untaxed_amount"/>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>

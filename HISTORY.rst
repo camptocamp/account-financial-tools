@@ -26,6 +26,7 @@ Latest (unreleased)
 * Field for incoterm on stock.picking BSRTL221
 * remove CUD access to product.template, product.product, product.category, mrp.bom to all groups BSRTL219
 * add a new technical group called "Roctool Product Manager" who can CRUD product.template, product.product, product.category and mrp.bom BSRTL219
+* Better hr.expense tree view & expense product creation BSRTL-193
 
 **Bugfixes**
 

@@ -218,3 +218,4 @@ migration:
           - specific_security
           - web_environment_ribbon
           - server_environment_ir_config_parameter
+          - specific_expense
