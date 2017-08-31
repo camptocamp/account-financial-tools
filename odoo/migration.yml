@@ -219,3 +219,5 @@ migration:
           - web_environment_ribbon
           - server_environment_ir_config_parameter
           - specific_expense
+          - dj_compilation_account
+          - dj_compilation_stock
