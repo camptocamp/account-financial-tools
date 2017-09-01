@@ -23,7 +23,7 @@ class IntrastatDoc(models.TransientModel):
     picking_id = fields.Integer()
     document_type = fields.Char()
     total = fields.Float(default=0)
-    currency = fields.Char()
+    unity_of_measure = fields.Char()
 
     stock_pick = None
     sale_order = None
@@ -39,7 +39,7 @@ class IntrastatDoc(models.TransientModel):
                          bottom=Side(style='thin'))
 
     @api.multi
-    def dowload(self):
+    def download(self):
         """
             Create the Excel document and returns it
         """
@@ -50,12 +50,15 @@ class IntrastatDoc(models.TransientModel):
             raise Warning(_('The stock picking could not be found.'))
         self.sale_order = self.env['sale.order'].search(
                 [('procurement_group_id', '=', self.stock_pick.group_id.id)])
+        # Set the unity of measure depending on the type of document
         if self.document_type == 'packinglist':
             wb = load_workbook(self.PACKING_LIST_TMPL)
-            self.currency = 'Kg'
+            self.unity_of_measure = 'kg'
         else:
+            # For the commercial invoice use the currency of the sale order
             wb = load_workbook(self.INVOICE_TMPL)
-            self.currency = self.sale_order.holding_currency_id.name or ''
+            self.unity_of_measure = (self.sale_order.holding_currency_id.name
+                                     or '')
         ws = wb.active
         self._set_header(ws)
         current_line = 18
@@ -119,8 +122,8 @@ class IntrastatDoc(models.TransientModel):
         self._add_line(ws, row, ['', '', 'Size: L*|*H'], True)
         self._add_line(ws, row, ['', '', 'INCOTERM'], True)
         self._add_line(ws, row,
-                       ['', '', 'Total {}'.format(self.currency), self.total],
-                       True)
+                       ['', '', 'Total {}'.format(self.unity_of_measure),
+                        self.total], True)
 
     @api.multi
     def _insert_address(self, ws, row, column, address):
