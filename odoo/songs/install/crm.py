@@ -36,7 +36,7 @@ def create_sales_team(ctx):
     for company in ctx.env['res.company'].search([]):
         xml_id = '__setup__.crm_team_%s' % company.id
         create_or_update(ctx, 'crm.team', xml_id, {'name': company.name,
-                                                   'company_id': False})
+                                                   'company_id': company.id})
 
 
 @anthem.log
