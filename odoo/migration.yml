@@ -221,3 +221,4 @@ migration:
           - specific_expense
           - dj_compilation_account
           - dj_compilation_stock
+          - intrastat_doc
