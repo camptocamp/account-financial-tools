@@ -28,6 +28,7 @@ Latest (unreleased)
 * add a new technical group called "Roctool Product Manager" who can CRUD product.template, product.product, product.category and mrp.bom BSRTL219
 * Better hr.expense tree view & expense product creation BSRTL-193
 * Add DJ
+* Add company_id to sales_team BSRTL-226
 
 **Bugfixes**
 
