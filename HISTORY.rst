@@ -29,6 +29,7 @@ Latest (unreleased)
 * Better hr.expense tree view & expense product creation BSRTL-193
 * Add DJ
 * Add company_id to sales_team BSRTL-226
+* Install `hr_expense_usability` BSRTL-235
 
 **Bugfixes**
 
