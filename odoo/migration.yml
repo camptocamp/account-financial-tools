@@ -222,6 +222,7 @@ migration:
           - dj_compilation_account
           - dj_compilation_stock
           - intrastat_doc
+          - hr_expense_usability
       operations:
         post:
           - anthem songs.install.crm::create_sales_team

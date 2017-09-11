@@ -40,3 +40,7 @@
 	path = odoo/external-src/odoo-prototype
 	url = git@github.com:camptocamp/odoo-prototype.git
 	branch = 10.0
+[submodule "odoo/external-src/odoo-usability"]
+	path = odoo/external-src/odoo-usability
+	url = https://github.com/akretion/odoo-usability.git
+	branch = 10.0
