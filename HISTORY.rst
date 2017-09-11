@@ -31,6 +31,7 @@ Latest (unreleased)
 * Add company_id to sales_team BSRTL-226
 * Install `hr_expense_usability` BSRTL-235
 * Update odoo and enterprise BSRTL-234
+* Duplicate `is_request_sn` on product.template form view BSRTL-227
 
 **Bugfixes**
 
