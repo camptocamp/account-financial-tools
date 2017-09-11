@@ -213,12 +213,11 @@ migration:
     - version: 10.0.20
       addons:
         upgrade:
+          - base
           - roctool_reports
-          - specific_sale
           - specific_security
           - web_environment_ribbon
           - server_environment_ir_config_parameter
-          - specific_expense
           - dj_compilation_account
           - dj_compilation_stock
           - intrastat_doc

@@ -30,6 +30,7 @@ Latest (unreleased)
 * Add DJ
 * Add company_id to sales_team BSRTL-226
 * Install `hr_expense_usability` BSRTL-235
+* Update odoo and enterprise BSRTL-234
 
 **Bugfixes**
 
