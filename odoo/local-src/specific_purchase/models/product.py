@@ -21,3 +21,12 @@ class ProductTemplate(models.Model):
         string='Request SN to Supplier',
         related='product_variant_ids.is_req_sn_supplier'
     )
+
+    supplier_warranty = fields.Float(
+        default=24.,
+        help='supplier warranty duration (months)',
+    )
+
+    warranty = fields.Float(
+        default=12.,
+    )
