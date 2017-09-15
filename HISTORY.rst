@@ -32,6 +32,7 @@ Latest (unreleased)
 * Install `hr_expense_usability` BSRTL-235
 * Update odoo and enterprise BSRTL-234
 * Duplicate `is_request_sn` on product.template form view BSRTL-227
+* Manage warranty durations on production lots
 
 **Bugfixes**
 
