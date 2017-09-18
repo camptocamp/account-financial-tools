@@ -11,14 +11,24 @@ class PurchaseOrderLine(models.Model):
     analytic_tag_ids = fields.Many2many(
         'account.analytic.tag',
         readonly=True,
-        compute='compute_tag'
     )
     analytic_tag_id = fields.Many2one(
         'account.analytic.tag',
         required=True,
+        compute='_compute_tag',
+        inverse='_set_tag',
+        domain=[('analytic_dimension_id', '!=', False)],
     )
 
-    @api.onchange('analytic_tag_id')
-    def compute_tag(self):
+    @api.depends('analytic_tag_ids')
+    def _compute_tag(self):
         for line in self:
-            line.analytic_tag_ids = line.analytic_tag_id
+            tags = line.analytic_tag_ids.filtered('analytic_dimension_id')
+            if tags:
+                line.analytic_tag_id = tags[0]
+            else:
+                line.analytic_tag_id = False
+
+    def _set_tag(self):
+        for line in self:
+            line.analytic_tag_ids += line.analytic_tag_id
