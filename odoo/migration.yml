@@ -220,6 +220,7 @@ migration:
           - web_environment_ribbon
           - server_environment_ir_config_parameter
           - specific_expense
+          - specific_analytic_tag_dimension
           - dj_compilation_account
           - dj_compilation_stock
           - intrastat_doc
