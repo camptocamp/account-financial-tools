@@ -7,7 +7,7 @@ migration:
         pre:
           - anthem songs.install.pre::main
         post:
-          - anthem odoo.addons.cloud_platform.songs::install_exoscale
+          - anthem odoo.addons.cloud_platform.songs::install_ovh
           - anthem songs.install.accounting::main
           - anthem songs.install.multi_company::main
           - anthem songs.install.users::main
@@ -24,7 +24,7 @@ migration:
       #         - anthem songs.install.data_demo::main
       addons:
         upgrade:
-          - cloud_platform
+          - cloud_platform_ovh
           #### core
           - account
           - crm
@@ -226,11 +226,6 @@ migration:
           - intrastat_doc
           - hr_expense_usability
           - specific_purchase
-          - cloud_platform_ovh
-          - base_attachment_object_storage
       operations:
-        pre:
-          - anthem songs.upgrade.10_0_20::pre
         post:
           - anthem songs.install.crm::create_sales_team
-          - anthem odoo.addons.cloud_platform.songs::install_ovh
