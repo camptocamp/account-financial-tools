@@ -22,6 +22,18 @@ Latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.0.20 (2017-09-21)
+++++++++++++++++++++
+
+**Features and Improvements**
+
 * Custom SO name label for pdf reports BSRTL223
 * Field for incoterm on stock.picking BSRTL221
 * remove CUD access to product.template, product.product, product.category, mrp.bom to all groups BSRTL219
@@ -34,11 +46,9 @@ Latest (unreleased)
 * Duplicate `is_request_sn` on product.template form view BSRTL-227
 * Manage warranty durations on production lots
 
-**Bugfixes**
-
 **Build**
 
-**Documentation**
+* Migrate to FR platform
 
 
 10.0.19 (2017-08-04)
