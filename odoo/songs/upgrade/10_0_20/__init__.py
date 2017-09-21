@@ -11,6 +11,6 @@ def uninstall_attachment_s3(ctx):
 
 
 @anthem.log
-def post(ctx):
-    """ Post-update """
+def pre(ctx):
+    """ Pre-update """
     uninstall_attachment_s3(ctx)

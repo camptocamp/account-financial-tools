@@ -226,14 +226,11 @@ migration:
           - intrastat_doc
           - hr_expense_usability
           - specific_purchase
+          - cloud_platform_ovh
+          - base_attachment_object_storage
       operations:
+        pre:
+          - anthem songs.upgrade.10_0_20::pre
         post:
           - anthem songs.install.crm::create_sales_team
-    - version: 10.0.21
-      addons:
-        upgrade:
-          - cloud_platform_ovh
-      operations:
-        post:
           - anthem odoo.addons.cloud_platform.songs::install_ovh
-          - anthem songs.upgrade.10_0_21::post
