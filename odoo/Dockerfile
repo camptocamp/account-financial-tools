@@ -1,22 +1,24 @@
-FROM camptocamp/odoo-project:10.0-2.3.0
+FROM camptocamp/odoo-project:10.0-2.4.0
 MAINTAINER Camptocamp
 
-# Install additional debian packages if needed
-# RUN set -x; \
-#         apt-get update \
-#         && apt-get install -y --no-install-recommends \
-#         python-shapely \
-#         && apt-get clean \
-#         && rm -rf /var/lib/apt/lists/*
+COPY ./requirements.txt /opt/odoo
+
+# Install additional debian and python packages if needed
+RUN set -x; \
+        apt-get update \
+        && apt-get install -y --no-install-recommends \
+        parallel \
+        python-dev build-essential \
+        && cd /opt/odoo \
+        && find . -maxdepth 1 -name "*requirements.txt" ! -name src_requirements.txt ! -name base_requirements.txt -exec pip install -r {} \; \
+        && apt-get remove -y build-essential python-dev \
+        && apt-get clean \
+        && rm -rf /var/lib/apt/lists/*
 
 COPY ./before-migrate-entrypoint.d/* odoo/before-migrate-entrypoint.d/
 COPY ./start-entrypoint.d/* odoo/start-entrypoint.d/
 RUN chmod +x odoo/before-migrate-entrypoint.d/* \
     && chmod +x odoo/start-entrypoint.d/*
-
-# Install additional python packages if needed
-COPY ./requirements.txt ./
-RUN pip install -r requirements.txt
 
 ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/src/addons, \
