@@ -7,10 +7,16 @@ migration:
         pre:
           - anthem songs.install.pre::main
         post:
-          - anthem odoo.addons.cloud_platform.songs::install_ovh
-          - anthem songs.install.accounting::main
+          - anthem odoo.addons.cloud_platform.songs::install_exoscale
           - anthem songs.install.multi_company::main
+          - anthem songs.install.multi_company::import_companies
+          - anthem songs.install.accounting::main
           - anthem songs.install.users::main
+          - anthem songs.install.sale::main
+          - anthem songs.install.users::main
+          - anthem songs.install.crm::main
+          - anthem  songs.install.products::main
+          - anthem songs.install.general_settings::main
           # - anthem songs.install.logistics::main
           # - anthem songs.install.data_all::main
       # modes:
@@ -30,202 +36,116 @@ migration:
           - crm
           - document
           - hr
-          - hr_expense
-          - hr_holidays
-          - hr_timesheet
-          - hr_timesheet_sheet
-          - l10n_fr
-          - mrp
-          - project
-          - purchase
-          - sale_stock
-          - survey
-          #### local-src
-          # - my_addon
-    - version: 10.0.1
-      operations:
-          post:
-            - anthem songs.install.users::main
-            - anthem songs.install.crm::main
-      addons:
-        upgrade:
-          - specific_crm
-    - version: 10.0.3
-      operations:
-        pre:
-          - anthem songs.install.sale::main
-        post:
-          - anthem  songs.install.products::main
-          - anthem songs.install.general_settings::main
-      addons:
-        upgrade:
-          - website_quote
-    - version: 10.0.4
-      operations:
-        pre:
-          - anthem songs.install.multi_company::import_companies
-          - anthem songs.install.sale::configure_sale_app
-        post:
-          - anthem songs.install.crm::import_project_zone
-          - anthem songs.install.crm::import_project_process
-          - anthem songs.install.crm::import_project_market
-          - anthem songs.install.accounting::configure_chart_of_account
-          - anthem songs.install.accounting::configure_tax_cash_basis
-          - anthem songs.install.crm::import_crm_stages
-          - anthem songs.install.crm::create_sales_team
-          - anthem songs.install.crm::add_stage_to_sale_team
-          - anthem songs.upgrade.10_0_4.crm::main
-      addons:
-        upgrade:
-          - specific_crm
-          - specific_sale
-          - l10n_jp
-          - l10n_us
-          - l10n_de_skr03
-          - website_sale
-          - website_sale_options
-    - version: 10.0.5
-      operations:
-        post:
-          - anthem songs.upgrade.10_0_5.users::main
-      addons:
-        upgrade:
-          - hr_maintenance
-          - maintenance
-    - version: 10.0.6
-      operations:
-        pre:
-          - anthem songs.upgrade.10_0_6.update_pre::main
-        post:
-          - anthem songs.upgrade.10_0_6.update_post::main
-      addons:
-        upgrade:
-          - specific_purchase
-    - version: 10.0.7
-      operations:
-        pre:
-          - anthem songs.upgrade.10_0_7::pre
-        post:
-          - anthem songs.upgrade.10_0_7::post
-      addons:
-        upgrade:
-          - delivery_fedex
           - hr_contract_reference
           - hr_emergency_contact
           - hr_employee_birth_name
           - hr_employee_phone_extension
           - hr_employee_seniority
           - hr_employee_social_media
+          - hr_expense
           - hr_experience
-          - sale_product_set_layout
-          - specific_hr
-          - specific_purchase
-          - stock_dropshipping
-    - version: 10.0.8
-      addons:
-        upgrade:
-          - specific_crm
-          - specific_sale
-          - sale_order_revision
-    - version: 10.0.9
-      addons:
-        upgrade:
-          - specific_hr
-          - specific_sale
-    - version: 10.0.10
-      addons:
-        upgrade:
-          - specific_sale
+          - hr_holidays
+          - hr_maintenance
           - intrastat_base
+          - l10n_de_skr03
+          - l10n_fr
+          - l10n_jp
+          - l10n_us
+          - maintenance
+          - mrp
+          - project
+          - purchase
+          - sale_layout_hidden
+          - sale_order_revision
+          - sale_product_set_layout
+          - sale_stock
+          - stock_dropshipping
+          - survey
+          - timesheet_grid
+          - website_quote
+          - website_sale
+          - website_sale_options
+          #- website_contract
+          #### external src
+          - hr_expense_usability
+          - hs_code_link
           - product_harmonized_system
+          - project_stage_state
+          - project_task_default_stage
+          - server_environment_ir_config_parameter
+          - web_environment_ribbon
+          ### Camptocamp
+          - base_attachment_object_storage
+          - cloud_platform_ovh
+          - dj_compilation_account
+          - dj_compilation_stock
+          #### local-src
+          - analytic_tag_dimension
+          - intrastat_doc
+          - roctool_reports
+          - sale_company_currency
+          - sale_project_fixed_price_task_completed_invoicing
+          - specific_analytic_tag_dimension
+          - specific_crm
+          - specific_expense
+          - specific_hr
+          - specific_inter_company
           - specific_purchase
+          - specific_sale
+          - specific_security
+          #- specific_subscription
+    - version: 10.0.4
+      operations:
+        post:
+          - anthem songs.upgrade.10_0_4.crm::main
+    - version: 10.0.5
+      operations:
+        post:
+          - anthem songs.upgrade.10_0_5.users::main
+    - version: 10.0.6
+      operations:
+        pre:
+          - anthem songs.upgrade.10_0_6.update_pre::main
+        post:
+          - anthem songs.upgrade.10_0_6.update_post::main
+    - version: 10.0.7
+      operations:
+        pre:
+          - anthem songs.upgrade.10_0_7::pre
+        post:
+          - anthem songs.upgrade.10_0_7::post
+    - version: 10.0.8
+    - version: 10.0.9
+    - version: 10.0.10
       operations:
         post:
           - anthem songs.upgrade.10_0_10.crm::main
     - version: 10.0.11
-      addons:
-        upgrade:
-          - sale_layout_hidden
-          - intrastat_base
-          - specific_crm
-          - specific_sale
-          - specific_hr
       operations:
         post:
           - anthem songs.upgrade.10_0_11.message_type::main
     - version: 10.0.12
-      addons:
-        upgrade:
-          - sale_contract
-          - specific_sale
-          - specific_crm
-          - project_stage_state
-          - project_task_default_stage
       operations:
         post:
           - anthem songs.upgrade.10_0_12.crm::main
           - anthem songs.upgrade.10_0_12.intercompany::main
     - version: 10.0.13
-      addons:
-        upgrade:
-          - specific_crm
-          - website_contract
     - version: 10.0.14
-      addons:
-        upgrade:
-          - specific_sale
-          - specific_inter_company
       operations:
         post:
           - anthem songs.upgrade.10_0_14.intercompany::main
     - version: 10.0.15
-      addons:
-        upgrade:
-          - sale_company_currency
-          - specific_crm
-          - specific_sale
-          - specific_expense
     - version: 10.0.16
       operations:
         post:
           - anthem songs.install.crm::create_channel_project_process
-      addons:
-        upgrade:
-          - specific_subscription
-          - sale_project_fixed_price_task_completed_invoicing
     - version: 10.0.17
-      addons:
-        upgrade:
-          - analytic_tag_dimension
-          - specific_sale
       operations:
         post:
           - anthem songs.upgrade.10_0_17.account_analytic_dimension::main
     - version: 10.0.18
-      addons:
-        upgrade:
-          - specific_analytic_tag_dimension
     - version: 10.0.19
-      addons:
-        upgrade:
-          - base
-          - hs_code_link
     - version: 10.0.20
-      addons:
-        upgrade:
-          - base
-          - roctool_reports
-          - specific_sale
-          - specific_security
-          - web_environment_ribbon
-          - server_environment_ir_config_parameter
-          - specific_expense
-          - specific_analytic_tag_dimension
-          - dj_compilation_account
-          - dj_compilation_stock
-          - intrastat_doc
-          - hr_expense_usability
-          - specific_purchase
       operations:
         post:
           - anthem songs.install.crm::create_sales_team

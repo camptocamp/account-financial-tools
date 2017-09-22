@@ -10,10 +10,11 @@ from ..common import req
 
 @anthem.log
 def activate_currencies(ctx, curr_list=['EUR']):
-    curr_obj = ctx.env['res.currency']
+    curr_obj = ctx.env['res.currency'].with_context(
+            active_test=False
+    )
     for curr in curr_list:
-        curr_obj.with_context(
-            active_test=False).search(
+        curr_obj.search(
                 [('name', '=', curr)], limit=1).active = True
 
 
@@ -28,5 +29,5 @@ def import_companies(ctx):
 @anthem.log
 def main(ctx):
     """ Main: creating demo data """
-    activate_currencies(ctx, ['GBP', 'EUR', 'USD', 'TWD', 'JPY'])
+    activate_currencies(ctx, ['GBP', 'EUR', 'USD', 'TWD', 'JPY', 'CNY'])
     import_companies(ctx)

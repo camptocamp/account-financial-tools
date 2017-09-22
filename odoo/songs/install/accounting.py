@@ -35,7 +35,7 @@ def configure_chart_of_account(ctx):
                     }
             acs = account_settings.create(vals)
 
-            acs.onchange_chart_template_id()
+#            acs.onchange_chart_template_id()
 
             acs.execute()
 
@@ -96,3 +96,5 @@ def main(ctx):
     """ Configuring accounting """
     activate_multicurrency(ctx)
     create_bank_accounts(ctx)
+    configure_chart_of_account(ctx)
+    configure_tax_cash_basis(ctx)
