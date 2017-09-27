@@ -31,12 +31,9 @@ def configure_chart_of_account(ctx):
                     'group_analytic_accounting': True,
                     'module_account_tax_cash_basis': True,
                     'company_id': company.id,
-                    'chart_template_id': ctx.env.ref(coa).id,
+                    # 'chart_template_id': ctx.env.ref(coa).id,
                     }
             acs = account_settings.create(vals)
-
-#            acs.onchange_chart_template_id()
-
             acs.execute()
 
 

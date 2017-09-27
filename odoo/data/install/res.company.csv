@@ -5,3 +5,4 @@ __setup__.roctool_inc,__setup__.roctool_holding,RocTool Inc.,,,,,base.us,,,,,,,U
 __setup__.roctool_gmbh,__setup__.roctool_holding,RocTool GmbH,,,,,base.de,,,,,,,EUR
 __setup__.roctool_taiwan,__setup__.roctool_holding,RocTool Taiwan,,,,,base.tw,,,,,,,TWD
 __setup__.roctool_japan,__setup__.roctool_holding,RocTool Japan,,,,,base.jp,,,,,,,JPY
+__setup__.roctool_china,__setup__.roctool_holding,RocTool China,,,,,base.cn,,,,,,,CNY

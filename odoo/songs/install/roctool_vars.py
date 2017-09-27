@@ -9,6 +9,7 @@ coa_dict = {
     '__setup__.roctool_gmbh': 'l10n_de_skr03.l10n_de_chart_template',
     # '__setup__.roctool_taiwan': 'l10n_jp.l10n_jp1',
     '__setup__.roctool_japan': 'l10n_jp.l10n_jp1',
+    '__setup__.roctool_china': None,
 }
 
 crm_stages = [

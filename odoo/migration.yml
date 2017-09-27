@@ -9,7 +9,6 @@ migration:
         post:
           - anthem odoo.addons.cloud_platform.songs::install_exoscale
           - anthem songs.install.multi_company::main
-          - anthem songs.install.multi_company::import_companies
           - anthem songs.install.accounting::main
           - anthem songs.install.users::main
           - anthem songs.install.sale::main
@@ -48,6 +47,7 @@ migration:
           - hr_maintenance
           - intrastat_base
           - l10n_de_skr03
+          - l10n_cn
           - l10n_fr
           - l10n_jp
           - l10n_us
