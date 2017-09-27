@@ -33,6 +33,8 @@ Latest (unreleased)
   account-financial-reporting,
   account-financial-tools already existed BSRTL-255
 * Install modules date_range and account_financial_report_qweb BSRTL-255
+* Removed delivery_fedex, website_contract, sale_contract
+  from migration BSRTL-244
 
 **Bugfixes**
 
