@@ -22,6 +22,8 @@ Latest (unreleased)
 
 **Features and Improvements**
 
+* Add new module from PR account_lock_date_update BSRTL-247
+
 **Bugfixes**
 
 **Build**

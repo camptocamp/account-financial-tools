@@ -44,3 +44,7 @@
 	path = odoo/external-src/odoo-usability
 	url = https://github.com/akretion/odoo-usability.git
 	branch = 10.0
+[submodule "odoo/external-src/account-financial-tools"]
+	path = odoo/external-src/account-financial-tools
+	url = git@github.com:camptocamp/account-financial-tools.git
+	branch = merge-branch-1900-master
