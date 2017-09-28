@@ -23,6 +23,7 @@ Latest (unreleased)
 **Features and Improvements**
 
 * Add new module from PR account_lock_date_update BSRTL-247
+* Fix intrastat documents generation if no hs_code on simple product BSRTL-251
 
 **Bugfixes**
 

@@ -136,7 +136,7 @@ class IntrastatDoc(models.TransientModel):
                 row += 1
 
     @api.multi
-    def _lines_product(self, product, qty, serial, value):
+    def _lines_product(self, product, qty, serial, value, no_hs=None):
         """ Constructs the detail lines for one product """
         self.ensure_one()
         lines = []
@@ -147,7 +147,11 @@ class IntrastatDoc(models.TransientModel):
         lines.append([qty, product.uom_po_id.name, product.name, column4])
         if serial:
             lines.append(['', '', u'Serial # {}'.format(serial)])
-        lines.append(['', '', u'HS Code: {}'.format(product.hs_code or '')])
+        hs_code = product.hs_code or ''
+        if no_hs:
+            hs_code = 'MISSING HS CODE'
+        lines.append(['', '', u'HS Code: {}'.format(hs_code)])
+
         lines.append([''])
         lines.append(['', '', u'Country of Origin: {}'.format(
             product.origin_country_id.name or '')])
@@ -175,6 +179,13 @@ class IntrastatDoc(models.TransientModel):
                 production_orders = self.env['mrp.production'].browse()
                 for q in quants:
                     production_orders |= q.history_ids.mapped('production_id')
+                if not production_orders:
+                    # Dealing with a simple product without hs_code
+                    serial = ' / '.join(quants.mapped('lot_id'))
+                    lines.extend(self._lines_product(
+                        product_moved, qty_moved, serial, price_total,
+                        no_hs=True))
+                    continue
                 production_qty = production_orders[0].product_qty
                 # Find all products use for production of the one
                 consumed_quants = quants.consumed_quant_ids
