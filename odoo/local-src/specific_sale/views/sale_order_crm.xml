@@ -71,6 +71,13 @@
         </group>
       </xpath>
 
+      <xpath expr="//field[@name='carrier_id']" position="attributes">
+        <attribute name="invisible">True</attribute>
+      </xpath>
+      <xpath expr="//label[@for='carrier_id']" position="attributes">
+        <attribute name="invisible">True</attribute>
+      </xpath>
+
       <field name='payment_term_id' position='after'>
         <field name='sales_condition' filename="sales_condition_filename"/>
         <field name='sales_condition_filename' invisible="1"/>

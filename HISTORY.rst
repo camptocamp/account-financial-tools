@@ -25,6 +25,7 @@ Latest (unreleased)
 * Add new module from PR account_lock_date_update BSRTL-247
 * Fix intrastat documents generation if no hs_code on simple product BSRTL-251
 * Moved project configuration group in sale order BSRTL-243
+* Hid delivery method field in sale order BSRTL-246
 
 **Bugfixes**
 
