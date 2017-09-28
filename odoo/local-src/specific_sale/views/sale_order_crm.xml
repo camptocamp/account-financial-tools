@@ -63,7 +63,7 @@
         <attribute name="states">sent,final_quote,sale</attribute>
       </xpath>
 
-      <xpath expr="//group[@name='sales_person']/.." position="inside">
+      <xpath expr="//field[@name='date_order']/.." position="after">
         <group name="project_name_computation" string="Project configuration">
           <field name="project_zone_id"/>
           <field name="project_process_id"/>

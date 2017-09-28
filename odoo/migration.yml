@@ -153,3 +153,4 @@ migration:
       addons:
         upgrade:
           - account_lock_date_update
+          - specific_sale
