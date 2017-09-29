@@ -150,6 +150,9 @@ migration:
         post:
           - anthem songs.install.crm::create_sales_team
     - version: 10.0.21
+      operations:
+        post:
+          - anthem songs.upgrade.10_0_21.mrp_settings::main
       addons:
         upgrade:
           - account_lock_date_update
