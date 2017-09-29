@@ -63,12 +63,19 @@
         <attribute name="states">sent,final_quote,sale</attribute>
       </xpath>
 
-      <xpath expr="//group[@name='sales_person']/.." position="inside">
+      <xpath expr="//field[@name='date_order']/.." position="after">
         <group name="project_name_computation" string="Project configuration">
           <field name="project_zone_id"/>
           <field name="project_process_id"/>
           <field name="project_market_id"/>
         </group>
+      </xpath>
+
+      <xpath expr="//field[@name='carrier_id']" position="attributes">
+        <attribute name="invisible">True</attribute>
+      </xpath>
+      <xpath expr="//label[@for='carrier_id']" position="attributes">
+        <attribute name="invisible">True</attribute>
       </xpath>
 
       <field name='payment_term_id' position='after'>
