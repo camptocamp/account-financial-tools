@@ -15,6 +15,48 @@
                     <field name="survey_input_lines"/>
                 </page>
             </xpath>
+            <xpath expr="//field[@name='date_deadline']" position="after">
+                <field name="contract_timeline"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_tree2_custom" model="ir.ui.view">
+        <field name="name">project.view.task.tree custom</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2"/>
+        <field name="arch" type="xml">
+            <xpath expr="field[@name='date_deadline']" position="attributes">
+                <attribute name="invisible">False</attribute>
+            </xpath>
+            <xpath expr="field[@name='date_deadline']" position="after">
+                <field name="contract_timeline"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_kanban_custom" model="ir.ui.view">
+        <field name="name">project.view.task.kanban custom</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="field[@name='date_deadline']" position="after">
+                <field name="contract_timeline"/>
+            </xpath>
+            <xpath expr="//div[@class='text-muted']" position="replace">
+                <div class="text-muted">
+                    <field name="project_id" invisible="context.get('default_project_id', False)"/>
+                    <t t-if="record.date_deadline.raw_value and record.date_deadline.raw_value lt (new Date())" t-set="red">oe_kanban_text_red</t>
+                    <span t-attf-class="#{red || ''}">
+                        <i t-if="record.date_deadline.value == record.contract_timeline.value">
+                            <field name="date_deadline"/>
+                        </i>
+                        <i t-else="">
+                            <field name="contract_timeline"/>(<field name="date_deadline"/>)
+                        </i>
+                    </span>
+                </div>
+            </xpath>
         </field>
     </record>
 

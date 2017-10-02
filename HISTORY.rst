@@ -27,6 +27,7 @@ Latest (unreleased)
 * Moved project configuration group in sale order BSRTL-243
 * Hid delivery method field in sale order BSRTL-246
 * Add feature to create MO from BOM via button BSRTL-242
+* Add new field on project task BSRTL-248
 
 **Bugfixes**
 

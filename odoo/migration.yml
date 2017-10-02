@@ -157,3 +157,4 @@ migration:
         upgrade:
           - account_lock_date_update
           - specific_sale
+          - specific_crm
