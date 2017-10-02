@@ -25,6 +25,7 @@
     "data": [
         'views/product_views.xml',
         'views/project_task.xml',
+        'views/project_project.xml',
         'views/mrp_bom.xml',
         'views/so_mail_template.xml',
         'views/stock_picking.xml',
