@@ -84,7 +84,7 @@ migration:
           - intrastat_doc
           - roctool_reports
           - sale_company_currency
-          - sale_project_fixed_price_task_completed_invoicing
+          - sale_order_invoicing_finished_task
           - specific_analytic_tag_dimension
           - specific_crm
           - specific_expense
@@ -163,3 +163,4 @@ migration:
           - account_financial_report_qweb
           - specific_purchase
           - specific_analytic_tag_dimension
+          - sale_order_invoicing_finished_task
