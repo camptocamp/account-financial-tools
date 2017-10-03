@@ -35,6 +35,7 @@ Latest (unreleased)
 * Install modules date_range and account_financial_report_qweb BSRTL-255
 * Removed delivery_fedex, website_contract, sale_contract
   from migration BSRTL-244
+* BOM: include project name in name_get + name_search BSRTL-241
 
 **Bugfixes**
 
