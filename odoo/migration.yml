@@ -153,6 +153,7 @@ migration:
       operations:
         post:
           - anthem songs.upgrade.10_0_21.mrp_settings::main
+          - anthem songs.install.expense_journals::main
       addons:
         upgrade:
           - account_lock_date_update
@@ -161,3 +162,4 @@ migration:
           - date_range
           - account_financial_report_qweb
           - specific_purchase
+          - specific_analytic_tag_dimension
