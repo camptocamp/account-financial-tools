@@ -39,6 +39,9 @@ Latest (unreleased)
 
 **Bugfixes**
 
+* Fixed lots and serial number generation for purchase orders
+  with product quantity more than one BSRTL-239
+
 **Build**
 
 **Documentation**
