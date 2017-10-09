@@ -236,8 +236,8 @@ class SaleOrder(models.Model):
     @api.multi
     def _check_validators(self):
         for so in self:
-            if (so.engineering_validation_required and
-                    so.system_validation_required and
+            if (so.engineering_validation_required or
+                    so.system_validation_required or
                     so.process_validation_required):
                 raise UserError(_('The Sale Order needs to be reviewed.'))
 

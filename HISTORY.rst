@@ -28,6 +28,7 @@ Latest (unreleased)
 * Hid delivery method field in sale order BSRTL-246
 
 **Bugfixes**
+* Fix triple validation of sale order required BSRTL-204
 
 **Build**
 
