@@ -26,6 +26,7 @@ Latest (unreleased)
 * Fix intrastat documents generation if no hs_code on simple product BSRTL-251
 * Moved project configuration group in sale order BSRTL-243
 * Hid delivery method field in sale order BSRTL-246
+* Add feature to create MO from BOM via button BSRTL-242
 
 **Bugfixes**
 
