@@ -157,3 +157,6 @@ migration:
         upgrade:
           - account_lock_date_update
           - specific_sale
+          - specific_crm
+          - date_range
+          - account_financial_report_qweb

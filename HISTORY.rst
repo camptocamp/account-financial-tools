@@ -27,6 +27,12 @@ Latest (unreleased)
 * Moved project configuration group in sale order BSRTL-243
 * Hid delivery method field in sale order BSRTL-246
 * Add feature to create MO from BOM via button BSRTL-242
+* Add new field on project task BSRTL-248
+* Add analytic amount button to project.project BSRTL-250
+* Add submodules account-closing account-consolidation
+  account-financial-reporting,
+  account-financial-tools already existed BSRTL-255
+* Install modules date_range and account_financial_report_qweb BSRTL-255
 
 **Bugfixes**
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="edit_project_specific_sale" model="ir.ui.view">
+        <field name="name">project.edit_project specific_sale</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='oe_button_box']" position="inside">
+                <button class="oe_stat_button" type="object"
+                        name="action_view_analytic_line" icon="fa-cog">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value"><field name="analytic_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/></span>
+                        <span class="o_stat_text">Analytic amount</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
