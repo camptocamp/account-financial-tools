@@ -29,6 +29,8 @@ Latest (unreleased)
 
 **Bugfixes**
 
+* Fix Expense, post journal entries crashes BSRTL-249
+
 **Build**
 
 **Documentation**

@@ -18,6 +18,7 @@ class HrExpense(models.Model):
 
     def _prepare_move_line(self, line):
         res = super(HrExpense, self)._prepare_move_line(line)
-        res['analytic_tag_ids'] = [
-            (4, self.employee_id.analytic_tag_id.id)]
+        if self.employee_id.analytic_tag_id.id:
+            res['analytic_tag_ids'] = [
+                (4, self.employee_id.analytic_tag_id.id)]
         return res
