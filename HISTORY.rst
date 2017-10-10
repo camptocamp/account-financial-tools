@@ -38,6 +38,7 @@ Latest (unreleased)
 * BOM: include project name in name_get + name_search BSRTL-241
 
 **Bugfixes**
+* Fix triple validation of sale order required BSRTL-204
 
 * Fixed lots and serial number generation for purchase orders
   with product quantity more than one BSRTL-239
