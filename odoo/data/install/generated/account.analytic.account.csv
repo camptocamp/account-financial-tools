@@ -1,4 +1,0 @@
-"id","active","code","company_id/id","line_ids/id","name","partner_id/id","project_ids/id","project_market_id/id","project_process_id/id","project_zone_id/id","subscription_ids/id","tag_ids/id","use_tasks"
-"project.project_project_data_account_analytic_account","True","","base.main_company","__setup__.fr_account_analytic_line_test","Start here to discover Odoo","","","","","","","","True"
-"","","","","__setup__.fr_account_analytic_line_test_3","","","","","","","","",""
-"","","","","__setup__.fr_account_analytic_line_etude","","","","","","","","",""

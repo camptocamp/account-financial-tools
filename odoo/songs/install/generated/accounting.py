@@ -1127,7 +1127,7 @@ def main(ctx):
     load_account_account(ctx)
     load_ir_sequence(ctx)
     # load_account_journal(ctx)
-    load_account_analytic_account(ctx)
+    # load_account_analytic_account(ctx)
     load_account_tax(ctx)
     load_ir_property(ctx)
     account_config_settings(ctx)
