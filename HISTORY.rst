@@ -36,6 +36,8 @@ Latest (unreleased)
 * Removed delivery_fedex, website_contract, sale_contract
   from migration BSRTL-244
 * BOM: include project name in name_get + name_search BSRTL-241
+* Add song to create expense journals, this is configurable in account.settings
+  BSRTL-252
 
 **Bugfixes**
 * Fix triple validation of sale order required BSRTL-204
