@@ -1,16 +1,14 @@
-"id","active","code","company_id/id","date_range_ids/id","implementation","name","number_increment","number_next","padding","prefix","suffix","use_date_range"
-"__setup__.fr_ir_sequence_bill_range_year_s_vendor_bills","True","","base.main_company","__setup__.ir_sequence_date_range_4","no_gap","Vendor Bills","1","1","4","BILL/%(range_year)s/","","True"
-"__setup__.fr_ir_sequence_bnk1_range_year_s_bank","True","","base.main_company","","no_gap","Bank","1","1","4","BNK1/%(range_year)s/","","True"
-"__setup__.fr_ir_sequence_bnk2_range_year_s_fr76_3000_4028_6800_0101_4019_381","True","","base.main_company","__setup__.ir_sequence_date_range_3","no_gap","FR76 3000 4028 6800 0101 4019 381","1","1","4","BNK2/%(range_year)s/","","True"
-"__setup__.fr_ir_sequence_bnk3_range_year_s_fr33_3000_2021_2900_0006_5435_z25","True","","base.main_company","","no_gap","FR33 3000 2021 2900 0006 5435 Z25","1","1","4","BNK3/%(range_year)s/","","True"
-"__setup__.fr_ir_sequence_bnk4_range_year_s_fr81_3000_2021_2900_0006_5543_d01","True","","base.main_company","","no_gap","FR81 3000 2021 2900 0006 5543 D01","1","1","4","BNK4/%(range_year)s/","","True"
-"__setup__.fr_ir_sequence_bnk5_range_year_s_fr76_3000_3005_6000_0207_1325_572","True","","base.main_company","","no_gap","FR76 3000 3005 6000 0207 1325 572","1","1","4","BNK5/%(range_year)s/","","True"
-"__setup__.fr_ir_sequence_csh1_range_year_s_cash","True","","base.main_company","","no_gap","Cash","1","1","4","CSH1/%(range_year)s/","","True"
-"__setup__.fr_ir_sequence_exch_range_year_s_exchange_difference","True","","base.main_company","","no_gap","Exchange Difference","1","1","4","EXCH/%(range_year)s/","","True"
-"__setup__.fr_ir_sequence_exp_range_year_s_expense_roctool_sa","True","","base.main_company","","no_gap","Expense RocTool SA","1","1","4","EXP/%(range_year)s/","","True"
-"__setup__.fr_ir_sequence_inv_range_year_s_customer_invoices","True","","base.main_company","__setup__.ir_sequence_date_range_2","no_gap","Customer Invoices","1","1","4","INV/%(range_year)s/","","True"
-"__setup__.fr_ir_sequence_misc_range_year_s_miscellaneous_operations","True","","base.main_company","__setup__.ir_sequence_date_range_1","no_gap","Miscellaneous Operations","1","1","4","MISC/%(range_year)s/","","True"
-"__setup__.fr_ir_sequence_stj_range_year_s_stock_journal","True","","base.main_company","","no_gap","Stock Journal","1","1","4","STJ/%(range_year)s/","","True"
-"__setup__.fr_ir_sequence_tcb_range_year_s_tax_cash_basis","True","","base.main_company","","no_gap","Tax Cash basis","1","1","4","TCB/%(range_year)s/","","True"
-"__setup__.hld_ir_sequence_exp_range_year_s_expense_roctool_holding","True","","__setup__.res_company_roctool_holding","","no_gap","Expense RocTool Holding","1","1","4","EXP/%(range_year)s/","","True"
-"__setup__.hld_ir_sequence_tcb_range_year_s_tax_cash_basis","True","","__setup__.res_company_roctool_holding","","no_gap","Tax Cash basis","1","1","4","TCB/%(range_year)s/","","True"
+id,active,code,company_id/id,implementation,name,number_increment,number_next,padding,prefix,suffix,use_date_range
+__setup__.fr_ir_sequence_bill_range_year_s_vendor_bills,True,,base.main_company,no_gap,Vendor Bills,1,1,4,BILL/%(range_year)s/,,True
+__setup__.fr_ir_sequence_bnk1_range_year_s_bank,True,,base.main_company,no_gap,Bank,1,1,4,BNK1/%(range_year)s/,,True
+__setup__.fr_ir_sequence_bnk2_range_year_s_fr76_3000_4028_6800_0101_4019_381,True,,base.main_company,no_gap,FR76 3000 4028 6800 0101 4019 381,1,1,4,BNK2/%(range_year)s/,,True
+__setup__.fr_ir_sequence_bnk3_range_year_s_fr33_3000_2021_2900_0006_5435_z25,True,,base.main_company,no_gap,FR33 3000 2021 2900 0006 5435 Z25,1,1,4,BNK3/%(range_year)s/,,True
+__setup__.fr_ir_sequence_bnk4_range_year_s_fr81_3000_2021_2900_0006_5543_d01,True,,base.main_company,no_gap,FR81 3000 2021 2900 0006 5543 D01,1,1,4,BNK4/%(range_year)s/,,True
+__setup__.fr_ir_sequence_bnk5_range_year_s_fr76_3000_3005_6000_0207_1325_572,True,,base.main_company,no_gap,FR76 3000 3005 6000 0207 1325 572,1,1,4,BNK5/%(range_year)s/,,True
+__setup__.fr_ir_sequence_csh1_range_year_s_cash,True,,base.main_company,no_gap,Cash,1,1,4,CSH1/%(range_year)s/,,True
+__setup__.fr_ir_sequence_exch_range_year_s_exchange_difference,True,,base.main_company,no_gap,Exchange Difference,1,1,4,EXCH/%(range_year)s/,,True
+__setup__.fr_ir_sequence_exp_range_year_s_expense_roctool_sa,True,,base.main_company,no_gap,Expense RocTool SA,1,1,4,EXP/%(range_year)s/,,True
+__setup__.fr_ir_sequence_inv_range_year_s_customer_invoices,True,,base.main_company,no_gap,Customer Invoices,1,1,4,INV/%(range_year)s/,,True
+__setup__.fr_ir_sequence_misc_range_year_s_miscellaneous_operations,True,,base.main_company,no_gap,Miscellaneous Operations,1,1,4,MISC/%(range_year)s/,,True
+__setup__.fr_ir_sequence_stj_range_year_s_stock_journal,True,,base.main_company,no_gap,Stock Journal,1,1,4,STJ/%(range_year)s/,,True
+__setup__.fr_ir_sequence_tcb_range_year_s_tax_cash_basis,True,,base.main_company,no_gap,Tax Cash basis,1,1,4,TCB/%(range_year)s/,,True
