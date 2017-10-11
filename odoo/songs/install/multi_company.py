@@ -27,7 +27,17 @@ def import_companies(ctx):
 
 
 @anthem.log
+def fix_paperformat(ctx):
+    """set paperformat of company (some l10n modules change the paperformat of the
+    main company)"""
+
+    content = resource_stream(req, 'data/install/res.company_paperformat.csv')
+    load_csv_stream(ctx, 'res.company', content, delimiter=',')
+
+
+@anthem.log
 def main(ctx):
     """ Main: creating demo data """
     activate_currencies(ctx, ['GBP', 'EUR', 'USD', 'TWD', 'JPY', 'CNY'])
     import_companies(ctx)
+    fix_paperformat(ctx)

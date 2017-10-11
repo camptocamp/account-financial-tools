@@ -1,0 +1,8 @@
+id,paperformat_id/id
+__setup__.roctool_holding,report.paperformat_euro
+base.main_company,report.paperformat_euro
+__setup__.roctool_inc,report.paperformat_us
+__setup__.roctool_gmbh,report.paperformat_euro
+__setup__.roctool_taiwan,report.paperformat_euro
+__setup__.roctool_japan,report.paperformat_euro
+__setup__.roctool_china,report.paperformat_euro
