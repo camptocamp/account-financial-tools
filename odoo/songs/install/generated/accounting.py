@@ -42,7 +42,7 @@ def load_account_financial_html_report(ctx):
 def load_product_category(ctx):
     """ Import product.category from csv """
     model = ctx.env['product.category'].with_context({'tracking_disable':1})  # noqa
-    header_exclude = ['child_id/id', 'parent_id/id']
+    header_exclude = ['parent_id/id']
     load_csv(ctx, 'data/install/generated/product.category.csv', model, header_exclude=header_exclude)  # noqa
     if header_exclude:
         load_csv(ctx, 'data/install/generated/product.category.csv', model, header=['id', ] + header_exclude)  # noqa
