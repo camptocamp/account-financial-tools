@@ -186,7 +186,7 @@ def account_config_settings_CN(ctx):
         # Compute sales tax automatically in the United States using TaxCloud.  # noqa
         'module_account_taxcloud': False,
         # Nom de votre société *  # noqa
-        'sepa_initiating_party_name': RocTool SA,
+        'sepa_initiating_party_name': "RocTool SA",
         # Taxe d'achat (%)  # noqa
         'purchase_tax_rate': 0.0,
         # Unité de l'intervalle: Manuellement  # noqa
@@ -323,7 +323,7 @@ def account_config_settings_DE(ctx):
         # Compute sales tax automatically in the United States using TaxCloud.  # noqa
         'module_account_taxcloud': False,
         # Nom de votre société *  # noqa
-        'sepa_initiating_party_name': RocTool SA,
+        'sepa_initiating_party_name': "RocTool SA",
         # Taxe d'achat (%)  # noqa
         'purchase_tax_rate': 0.0,
         # Unité de l'intervalle: Manuellement  # noqa
@@ -460,7 +460,7 @@ def account_config_settings_HLD(ctx):
         # Compute sales tax automatically in the United States using TaxCloud.  # noqa
         'module_account_taxcloud': False,
         # Nom de votre société *  # noqa
-        'sepa_initiating_party_name': Roctool,
+        'sepa_initiating_party_name': "Roctool",
         # Taxe d'achat (%)  # noqa
         'purchase_tax_rate': 0.0,
         # Unité de l'intervalle: Manuellement  # noqa
@@ -597,7 +597,7 @@ def account_config_settings_US(ctx):
         # Compute sales tax automatically in the United States using TaxCloud.  # noqa
         'module_account_taxcloud': False,
         # Nom de votre société *  # noqa
-        'sepa_initiating_party_name': RocTool SA,
+        'sepa_initiating_party_name': "RocTool SA",
         # Taxe d'achat (%)  # noqa
         'purchase_tax_rate': 0.0,
         # Unité de l'intervalle: Manuellement  # noqa
@@ -734,7 +734,7 @@ def account_config_settings_JP(ctx):
         # Compute sales tax automatically in the United States using TaxCloud.  # noqa
         'module_account_taxcloud': False,
         # Nom de votre société *  # noqa
-        'sepa_initiating_party_name': RocTool SA,
+        'sepa_initiating_party_name': "RocTool SA",
         # Taxe d'achat (%)  # noqa
         'purchase_tax_rate': 0.0,
         # Unité de l'intervalle: Manuellement  # noqa
@@ -871,7 +871,7 @@ def account_config_settings_FR(ctx):
         # Compute sales tax automatically in the United States using TaxCloud.  # noqa
         'module_account_taxcloud': False,
         # Nom de votre société *  # noqa
-        'sepa_initiating_party_name': Roctool,
+        'sepa_initiating_party_name': "Roctool",
         # Taxe d'achat (%)  # noqa
         'purchase_tax_rate': 0.0,
         # Unité de l'intervalle: Manuellement  # noqa
@@ -1009,7 +1009,7 @@ def account_config_settings_TW(ctx):
         # Compute sales tax automatically in the United States using TaxCloud.  # noqa
         'module_account_taxcloud': False,
         # Nom de votre société *  # noqa
-        'sepa_initiating_party_name': RocTool SA,
+        'sepa_initiating_party_name': "RocTool SA",
         # Taxe d'achat (%)  # noqa
         'purchase_tax_rate': 0.0,
         # Unité de l'intervalle: Manuellement  # noqa
