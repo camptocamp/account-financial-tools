@@ -3,6 +3,10 @@ python-json-logger==0.1.5
 statsd==3.2.1
 openpyxl==2.4.8
 
+# force getting the latest version, for dj console
+anthem==0.10.0
+marabunta==0.7.2
+
 # for attachment_swift
 python-swiftclient==3.4.0
 python-keystoneclient==3.13.0
