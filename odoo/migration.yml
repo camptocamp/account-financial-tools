@@ -164,6 +164,7 @@ migration:
         post:
           - anthem songs.upgrade.10_0_21.mrp_settings::main
           - anthem songs.install.expense_journals::main
+          - anthem songs.install.generated.accounting::main
       addons:
         upgrade:
           - account_lock_date_update
