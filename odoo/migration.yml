@@ -6,6 +6,7 @@ migration:
       operations:
         pre:
           - anthem songs.install.pre::main
+          - anthem songs.install.multi_company::main
         post:
           - anthem odoo.addons.cloud_platform.songs::install_ovh
           - anthem songs.install.multi_company::main
@@ -46,7 +47,7 @@ migration:
           - hr_holidays
           - hr_maintenance
           - intrastat_base
-          - l10n_de_skr03
+          - l10n_de_skr04
           - l10n_cn
           - l10n_fr
           - l10n_jp
@@ -154,6 +155,7 @@ migration:
         post:
           - anthem songs.upgrade.10_0_21.mrp_settings::main
           - anthem songs.install.expense_journals::main
+          - anthem songs.install.generated.accounting::main
       addons:
         upgrade:
           - account_lock_date_update
