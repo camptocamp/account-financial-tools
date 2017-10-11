@@ -7,7 +7,7 @@ migration:
         pre:
           - anthem songs.install.pre::main
         post:
-          - anthem odoo.addons.cloud_platform.songs::install_exoscale
+          - anthem odoo.addons.cloud_platform.songs::install_ovh
           - anthem songs.install.multi_company::main
           - anthem songs.install.accounting::main
           - anthem songs.install.users::main
