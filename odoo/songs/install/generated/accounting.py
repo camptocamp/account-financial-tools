@@ -132,7 +132,7 @@ def account_config_settings_CN(ctx):
     model = ctx.env['account.config.settings'].with_context({'tracking_disable':1})
     model.create({
         # Date de verrouillage  # noqa
-        'fiscalyear_lock_date': 'False',
+        'fiscalyear_lock_date': False,
         # Préfixe du compte banque *  # noqa
         'bank_account_code_prefix': False,
         # Préfixe des Comptes de Caisse *  # noqa
@@ -164,13 +164,13 @@ def account_config_settings_CN(ctx):
         # Gestion du budget  # noqa
         'module_account_budget': False,
         # Société  # noqa
-        'company_id': ctx.env.ref('__setup__.res_company_roctool_china').id,
+        'company_id': ctx.env.ref('__setup__.roctool_china').id,
         # Comptabilité analytique pour les ventes  # noqa
         'group_analytic_account_for_sales': True,
         # Avertissement: Tous les partenaires peuvent être utilisés dans les factures  # noqa
-        'group_warning_account': 'False',
+        'group_warning_account': False,
         # Expense Journal  # noqa
-        'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_china').id,
+        # 'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_china').id,
         # Autoriser devises multiples  # noqa
         'group_multi_currency': True,
         # Autoriser les factures proforma  # noqa
@@ -202,7 +202,7 @@ def account_config_settings_CN(ctx):
         # Identification *  # noqa
         'sepa_orgid_id': False,
         # Journal pour taxes sur base des paiements  # noqa
-        'tax_cash_basis_journal_id': False,
+        # 'tax_cash_basis_journal_id': False,
         # Utiliser la comptabilité anglo-saxonne  # noqa
         'use_anglo_saxon': False,
         # Taxe de vente (%)  # noqa
@@ -239,17 +239,17 @@ Best Regards,""",
         # Compte analytique  # noqa
         'group_analytic_accounting': True,
         # Prochaine date d'exécution  # noqa
-        'currency_next_execution_date': 'False',
+        'currency_next_execution_date': False,
         # Comptabilité analytique pour les achats  # noqa
         'group_analytic_account_for_purchases': True,
         # Date de verrouillage pour les non-conseillers  # noqa
-        'period_lock_date': 'False',
+        'period_lock_date': False,
         # Aperçu des comptes bancaires en pied de page  # noqa
         'company_footer': """False""",
         # Émetteur *  # noqa
         'sepa_orgid_issr': False,
         # Dernier mois de l'exercice: décembre  # noqa
-        'fiscalyear_last_month': '12',
+        'fiscalyear_last_month': 12,
         # Méthode d'arrondissement des Taxes *: Arrondir à la ligne  # noqa
         'tax_calculation_rounding_method': 'round_per_line',
         # Acquéreur par défaut   # noqa
@@ -269,7 +269,7 @@ def account_config_settings_DE(ctx):
     model = ctx.env['account.config.settings'].with_context({'tracking_disable':1})
     model.create({
         # Date de verrouillage  # noqa
-        'fiscalyear_lock_date': 'False',
+        'fiscalyear_lock_date': False,
         # Préfixe du compte banque *  # noqa
         'bank_account_code_prefix': 1200,
         # Préfixe des Comptes de Caisse *  # noqa
@@ -301,13 +301,13 @@ def account_config_settings_DE(ctx):
         # Gestion du budget  # noqa
         'module_account_budget': False,
         # Société  # noqa
-        'company_id': ctx.env.ref('__setup__.res_company_roctool_gmbh').id,
+        'company_id': ctx.env.ref('__setup__.roctool_gmbh').id,
         # Comptabilité analytique pour les ventes  # noqa
         'group_analytic_account_for_sales': True,
         # Avertissement: Tous les partenaires peuvent être utilisés dans les factures  # noqa
-        'group_warning_account': 'False',
+        'group_warning_account': False,
         # Expense Journal  # noqa
-        'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_gmbh').id,
+        # 'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_gmbh').id,
         # Autoriser devises multiples  # noqa
         'group_multi_currency': True,
         # Autoriser les factures proforma  # noqa
@@ -339,7 +339,7 @@ def account_config_settings_DE(ctx):
         # Identification *  # noqa
         'sepa_orgid_id': False,
         # Journal pour taxes sur base des paiements  # noqa
-        'tax_cash_basis_journal_id': ctx.env.ref('__setup__.account_journal_tax_cash_basis').id,
+        # 'tax_cash_basis_journal_id': ctx.env.ref('__setup__.account_journal_tax_cash_basis').id,
         # Utiliser la comptabilité anglo-saxonne  # noqa
         'use_anglo_saxon': False,
         # Taxe de vente (%)  # noqa
@@ -370,23 +370,23 @@ Best Regards,""",
         # Taxe de vente par défaut  # noqa
         'sale_tax_id': False,
         # Journal des différences de taux  # noqa
-        'currency_exchange_journal_id': ctx.env.ref('__setup__.account_journal_exchange_difference').id,
+        #'currency_exchange_journal_id': ctx.env.ref('__setup__.account_journal_exchange_difference').id,
         # Importer des fichiers .qif  # noqa
         'module_account_bank_statement_import_qif': False,
         # Compte analytique  # noqa
         'group_analytic_accounting': True,
         # Prochaine date d'exécution  # noqa
-        'currency_next_execution_date': 'False',
+        'currency_next_execution_date': False,
         # Comptabilité analytique pour les achats  # noqa
         'group_analytic_account_for_purchases': True,
         # Date de verrouillage pour les non-conseillers  # noqa
-        'period_lock_date': 'False',
+        'period_lock_date': False,
         # Aperçu des comptes bancaires en pied de page  # noqa
         'company_footer': """False""",
         # Émetteur *  # noqa
         'sepa_orgid_issr': False,
         # Dernier mois de l'exercice: décembre  # noqa
-        'fiscalyear_last_month': '12',
+        'fiscalyear_last_month': 12,
         # Méthode d'arrondissement des Taxes *: Arrondir à la ligne  # noqa
         'tax_calculation_rounding_method': 'round_per_line',
         # Acquéreur par défaut   # noqa
@@ -396,7 +396,7 @@ Best Regards,""",
         # Users Receiving the Intrastat Reminder  # noqa
         'intrastat_remind_user_ids': [],
         # Compte de transfert inter-bancaire  # noqa
-        'transfer_account_id': ctx.env.ref('l10n_de_skr03.5_account_1327').id,
+        #'transfer_account_id': ctx.env.ref('l10n_de_skr03.5_account_1327').id,
         
     }).execute()
 
@@ -406,7 +406,7 @@ def account_config_settings_HLD(ctx):
     model = ctx.env['account.config.settings'].with_context({'tracking_disable':1})
     model.create({
         # Date de verrouillage  # noqa
-        'fiscalyear_lock_date': 'False',
+        'fiscalyear_lock_date': False,
         # Préfixe du compte banque *  # noqa
         'bank_account_code_prefix': False,
         # Préfixe des Comptes de Caisse *  # noqa
@@ -438,13 +438,13 @@ def account_config_settings_HLD(ctx):
         # Gestion du budget  # noqa
         'module_account_budget': False,
         # Société  # noqa
-        'company_id': ctx.env.ref('__setup__.res_company_roctool_holding').id,
+        'company_id': ctx.env.ref('__setup__.roctool_holding').id,
         # Comptabilité analytique pour les ventes  # noqa
         'group_analytic_account_for_sales': True,
         # Avertissement: Tous les partenaires peuvent être utilisés dans les factures  # noqa
-        'group_warning_account': 'False',
+        'group_warning_account': False,
         # Expense Journal  # noqa
-        'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_holding').id,
+        # 'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_holding').id,
         # Autoriser devises multiples  # noqa
         'group_multi_currency': True,
         # Autoriser les factures proforma  # noqa
@@ -476,7 +476,7 @@ def account_config_settings_HLD(ctx):
         # Identification *  # noqa
         'sepa_orgid_id': False,
         # Journal pour taxes sur base des paiements  # noqa
-        'tax_cash_basis_journal_id': ctx.env.ref('__setup__.account_journal_tax_cash_basis_21').id,
+        # 'tax_cash_basis_journal_id': ctx.env.ref('__setup__.account_journal_tax_cash_basis_21').id,
         # Utiliser la comptabilité anglo-saxonne  # noqa
         'use_anglo_saxon': False,
         # Taxe de vente (%)  # noqa
@@ -513,17 +513,17 @@ Best Regards,""",
         # Compte analytique  # noqa
         'group_analytic_accounting': True,
         # Prochaine date d'exécution  # noqa
-        'currency_next_execution_date': 'False',
+        'currency_next_execution_date': False,
         # Comptabilité analytique pour les achats  # noqa
         'group_analytic_account_for_purchases': True,
         # Date de verrouillage pour les non-conseillers  # noqa
-        'period_lock_date': 'False',
+        'period_lock_date': False,
         # Aperçu des comptes bancaires en pied de page  # noqa
         'company_footer': """False""",
         # Émetteur *  # noqa
         'sepa_orgid_issr': False,
         # Dernier mois de l'exercice: décembre  # noqa
-        'fiscalyear_last_month': '12',
+        'fiscalyear_last_month': 12,
         # Méthode d'arrondissement des Taxes *: Arrondir à la ligne  # noqa
         'tax_calculation_rounding_method': 'round_per_line',
         # Acquéreur par défaut   # noqa
@@ -543,7 +543,7 @@ def account_config_settings_US(ctx):
     model = ctx.env['account.config.settings'].with_context({'tracking_disable':1})
     model.create({
         # Date de verrouillage  # noqa
-        'fiscalyear_lock_date': 'False',
+        'fiscalyear_lock_date': False,
         # Préfixe du compte banque *  # noqa
         'bank_account_code_prefix': 1014,
         # Préfixe des Comptes de Caisse *  # noqa
@@ -575,13 +575,13 @@ def account_config_settings_US(ctx):
         # Gestion du budget  # noqa
         'module_account_budget': False,
         # Société  # noqa
-        'company_id': ctx.env.ref('__setup__.res_company_roctool_inc').id,
+        'company_id': ctx.env.ref('__setup__.roctool_inc').id,
         # Comptabilité analytique pour les ventes  # noqa
         'group_analytic_account_for_sales': True,
         # Avertissement: Tous les partenaires peuvent être utilisés dans les factures  # noqa
-        'group_warning_account': 'False',
+        'group_warning_account': False,
         # Expense Journal  # noqa
-        'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_inc').id,
+        # 'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_inc').id,
         # Autoriser devises multiples  # noqa
         'group_multi_currency': True,
         # Autoriser les factures proforma  # noqa
@@ -613,7 +613,7 @@ def account_config_settings_US(ctx):
         # Identification *  # noqa
         'sepa_orgid_id': False,
         # Journal pour taxes sur base des paiements  # noqa
-        'tax_cash_basis_journal_id': ctx.env.ref('__setup__.account_journal_tax_cash_basis_22').id,
+        # 'tax_cash_basis_journal_id': ctx.env.ref('__setup__.account_journal_tax_cash_basis_22').id,
         # Utiliser la comptabilité anglo-saxonne  # noqa
         'use_anglo_saxon': True,
         # Taxe de vente (%)  # noqa
@@ -644,23 +644,23 @@ Best Regards,""",
         # Taxe de vente par défaut  # noqa
         'sale_tax_id': False,
         # Journal des différences de taux  # noqa
-        'currency_exchange_journal_id': ctx.env.ref('__setup__.account_journal_exchange_difference_13').id,
+        #'currency_exchange_journal_id': ctx.env.ref('__setup__.account_journal_exchange_difference_13').id,
         # Importer des fichiers .qif  # noqa
         'module_account_bank_statement_import_qif': False,
         # Compte analytique  # noqa
         'group_analytic_accounting': True,
         # Prochaine date d'exécution  # noqa
-        'currency_next_execution_date': 'False',
+        'currency_next_execution_date': False,
         # Comptabilité analytique pour les achats  # noqa
         'group_analytic_account_for_purchases': True,
         # Date de verrouillage pour les non-conseillers  # noqa
-        'period_lock_date': 'False',
+        'period_lock_date': False,
         # Aperçu des comptes bancaires en pied de page  # noqa
         'company_footer': """False""",
         # Émetteur *  # noqa
         'sepa_orgid_issr': False,
         # Dernier mois de l'exercice: décembre  # noqa
-        'fiscalyear_last_month': '12',
+        'fiscalyear_last_month': 12,
         # Méthode d'arrondissement des Taxes *: Arrondir à la ligne  # noqa
         'tax_calculation_rounding_method': 'round_per_line',
         # Acquéreur par défaut   # noqa
@@ -670,7 +670,7 @@ Best Regards,""",
         # Users Receiving the Intrastat Reminder  # noqa
         'intrastat_remind_user_ids': [],
         # Compte de transfert inter-bancaire  # noqa
-        'transfer_account_id': ctx.env.ref('l10n_generic_coa.4_transfer_account_id').id,
+        #'transfer_account_id': ctx.env.ref('l10n_generic_coa.4_transfer_account_id').id,
         
     }).execute()
 
@@ -680,11 +680,11 @@ def account_config_settings_JP(ctx):
     model = ctx.env['account.config.settings'].with_context({'tracking_disable':1})
     model.create({
         # Date de verrouillage  # noqa
-        'fiscalyear_lock_date': 'False',
+        'fiscalyear_lock_date': False,
         # Préfixe du compte banque *  # noqa
-        'bank_account_code_prefix': A11102,
+        'bank_account_code_prefix': 'A11102',
         # Préfixe des Comptes de Caisse *  # noqa
-        'cash_account_code_prefix': A11105,
+        'cash_account_code_prefix': 'A11105',
         # Gestion d'actifs  # noqa
         'module_account_asset': False,
         # SEPA Pain Version *: Générique  # noqa
@@ -712,13 +712,13 @@ def account_config_settings_JP(ctx):
         # Gestion du budget  # noqa
         'module_account_budget': False,
         # Société  # noqa
-        'company_id': ctx.env.ref('__setup__.res_company_roctool_japan').id,
+        'company_id': ctx.env.ref('__setup__.roctool_japan').id,
         # Comptabilité analytique pour les ventes  # noqa
         'group_analytic_account_for_sales': True,
         # Avertissement: Tous les partenaires peuvent être utilisés dans les factures  # noqa
-        'group_warning_account': 'False',
+        'group_warning_account': False,
         # Expense Journal  # noqa
-        'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_japan').id,
+        # 'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_japan').id,
         # Autoriser devises multiples  # noqa
         'group_multi_currency': True,
         # Autoriser les factures proforma  # noqa
@@ -750,7 +750,7 @@ def account_config_settings_JP(ctx):
         # Identification *  # noqa
         'sepa_orgid_id': False,
         # Journal pour taxes sur base des paiements  # noqa
-        'tax_cash_basis_journal_id': ctx.env.ref('__setup__.account_journal_tax_cash_basis_23').id,
+        # 'tax_cash_basis_journal_id': ctx.env.ref('__setup__.account_journal_tax_cash_basis_23').id,
         # Utiliser la comptabilité anglo-saxonne  # noqa
         'use_anglo_saxon': False,
         # Taxe de vente (%)  # noqa
@@ -781,23 +781,23 @@ Best Regards,""",
         # Taxe de vente par défaut  # noqa
         'sale_tax_id': False,
         # Journal des différences de taux  # noqa
-        'currency_exchange_journal_id': ctx.env.ref('__setup__.account_journal_exchange_difference_14').id,
+        #'currency_exchange_journal_id': ctx.env.ref('__setup__.account_journal_exchange_difference_14').id,
         # Importer des fichiers .qif  # noqa
         'module_account_bank_statement_import_qif': False,
         # Compte analytique  # noqa
         'group_analytic_accounting': True,
         # Prochaine date d'exécution  # noqa
-        'currency_next_execution_date': 'False',
+        'currency_next_execution_date': False,
         # Comptabilité analytique pour les achats  # noqa
         'group_analytic_account_for_purchases': True,
         # Date de verrouillage pour les non-conseillers  # noqa
-        'period_lock_date': 'False',
+        'period_lock_date': False,
         # Aperçu des comptes bancaires en pied de page  # noqa
         'company_footer': """False""",
         # Émetteur *  # noqa
         'sepa_orgid_issr': False,
         # Dernier mois de l'exercice: décembre  # noqa
-        'fiscalyear_last_month': '12',
+        'fiscalyear_last_month': 12,
         # Méthode d'arrondissement des Taxes *: Arrondir à la ligne  # noqa
         'tax_calculation_rounding_method': 'round_per_line',
         # Acquéreur par défaut   # noqa
@@ -807,7 +807,7 @@ Best Regards,""",
         # Users Receiving the Intrastat Reminder  # noqa
         'intrastat_remind_user_ids': [],
         # Compte de transfert inter-bancaire  # noqa
-        'transfer_account_id': ctx.env.ref('l10n_jp.7_transfer_account_id').id,
+        #'transfer_account_id': ctx.env.ref('l10n_jp.7_transfer_account_id').id,
         
     }).execute()
 
@@ -817,7 +817,7 @@ def account_config_settings_FR(ctx):
     model = ctx.env['account.config.settings'].with_context({'tracking_disable':1})
     model.create({
         # Date de verrouillage  # noqa
-        'fiscalyear_lock_date': 'False',
+        'fiscalyear_lock_date': False,
         # Préfixe du compte banque *  # noqa
         'bank_account_code_prefix': 512,
         # Préfixe des Comptes de Caisse *  # noqa
@@ -853,9 +853,9 @@ def account_config_settings_FR(ctx):
         # Comptabilité analytique pour les ventes  # noqa
         'group_analytic_account_for_sales': True,
         # Avertissement: Tous les partenaires peuvent être utilisés dans les factures  # noqa
-        'group_warning_account': 'False',
+        'group_warning_account': False,
         # Expense Journal  # noqa
-        'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_sa').id,
+        # 'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_sa').id,
         # Autoriser devises multiples  # noqa
         'group_multi_currency': True,
         # Autoriser les factures proforma  # noqa
@@ -887,7 +887,7 @@ def account_config_settings_FR(ctx):
         # Identification *  # noqa
         'sepa_orgid_id': False,
         # Journal pour taxes sur base des paiements  # noqa
-        'tax_cash_basis_journal_id': ctx.env.ref('__setup__.account_journal_tax_cash_basis_24').id,
+        # 'tax_cash_basis_journal_id': ctx.env.ref('__setup__.account_journal_tax_cash_basis_24').id,
         # Utiliser la comptabilité anglo-saxonne  # noqa
         'use_anglo_saxon': False,
         # Taxe de vente (%)  # noqa
@@ -919,23 +919,23 @@ Cordialement,""",
         # Taxe de vente par défaut  # noqa
         'sale_tax_id': False,
         # Journal des différences de taux  # noqa
-        'currency_exchange_journal_id': ctx.env.ref('__setup__.account_journal_exchange_difference_15').id,
+        #'currency_exchange_journal_id': ctx.env.ref('__setup__.account_journal_exchange_difference_15').id,
         # Importer des fichiers .qif  # noqa
         'module_account_bank_statement_import_qif': False,
         # Compte analytique  # noqa
         'group_analytic_accounting': True,
         # Prochaine date d'exécution  # noqa
-        'currency_next_execution_date': 'False',
+        'currency_next_execution_date': False,
         # Comptabilité analytique pour les achats  # noqa
         'group_analytic_account_for_purchases': True,
         # Date de verrouillage pour les non-conseillers  # noqa
-        'period_lock_date': 'False',
+        'period_lock_date': False,
         # Aperçu des comptes bancaires en pied de page  # noqa
         'company_footer': """False""",
         # Émetteur *  # noqa
         'sepa_orgid_issr': False,
         # Dernier mois de l'exercice: décembre  # noqa
-        'fiscalyear_last_month': '12',
+        'fiscalyear_last_month': 12,
         # Méthode d'arrondissement des Taxes *: Arrondir à la ligne  # noqa
         'tax_calculation_rounding_method': 'round_per_line',
         # Acquéreur par défaut   # noqa
@@ -955,7 +955,7 @@ def account_config_settings_TW(ctx):
     model = ctx.env['account.config.settings'].with_context({'tracking_disable':1})
     model.create({
         # Date de verrouillage  # noqa
-        'fiscalyear_lock_date': 'False',
+        'fiscalyear_lock_date': False,
         # Préfixe du compte banque *  # noqa
         'bank_account_code_prefix': False,
         # Préfixe des Comptes de Caisse *  # noqa
@@ -987,13 +987,13 @@ def account_config_settings_TW(ctx):
         # Gestion du budget  # noqa
         'module_account_budget': False,
         # Société  # noqa
-        'company_id': ctx.env.ref('__setup__.res_company_roctool_taiwan').id,
+        'company_id': ctx.env.ref('__setup__.roctool_taiwan').id,
         # Comptabilité analytique pour les ventes  # noqa
         'group_analytic_account_for_sales': True,
         # Avertissement: Tous les partenaires peuvent être utilisés dans les factures  # noqa
-        'group_warning_account': 'False',
+        'group_warning_account': False,
         # Expense Journal  # noqa
-        'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_taiwan').id,
+        # 'expense_journal_id': ctx.env.ref('__setup__.account_journal_expense_roctool_taiwan').id,
         # Autoriser devises multiples  # noqa
         'group_multi_currency': True,
         # Autoriser les factures proforma  # noqa
@@ -1025,7 +1025,7 @@ def account_config_settings_TW(ctx):
         # Identification *  # noqa
         'sepa_orgid_id': False,
         # Journal pour taxes sur base des paiements  # noqa
-        'tax_cash_basis_journal_id': ctx.env.ref('__setup__.account_journal_tax_cash_basis_25').id,
+        # 'tax_cash_basis_journal_id': ctx.env.ref('__setup__.account_journal_tax_cash_basis_25').id,
         # Utiliser la comptabilité anglo-saxonne  # noqa
         'use_anglo_saxon': False,
         # Taxe de vente (%)  # noqa
@@ -1062,17 +1062,17 @@ Best Regards,""",
         # Compte analytique  # noqa
         'group_analytic_accounting': True,
         # Prochaine date d'exécution  # noqa
-        'currency_next_execution_date': 'False',
+        'currency_next_execution_date': False,
         # Comptabilité analytique pour les achats  # noqa
         'group_analytic_account_for_purchases': True,
         # Date de verrouillage pour les non-conseillers  # noqa
-        'period_lock_date': 'False',
+        'period_lock_date': False,
         # Aperçu des comptes bancaires en pied de page  # noqa
         'company_footer': """False""",
         # Émetteur *  # noqa
         'sepa_orgid_issr': False,
         # Dernier mois de l'exercice: décembre  # noqa
-        'fiscalyear_last_month': '12',
+        'fiscalyear_last_month': 12,
         # Méthode d'arrondissement des Taxes *: Arrondir à la ligne  # noqa
         'tax_calculation_rounding_method': 'round_per_line',
         # Acquéreur par défaut   # noqa
@@ -1129,7 +1129,7 @@ def main(ctx):
     # load_account_journal(ctx)
     # load_account_analytic_account(ctx)
     load_account_tax(ctx)
-    load_ir_property(ctx)
+    # WE NEED THIS ! load_ir_property(ctx)
     account_config_settings(ctx)
     load_account_fiscal_position(ctx)
     load_account_fiscal_position_account(ctx)
