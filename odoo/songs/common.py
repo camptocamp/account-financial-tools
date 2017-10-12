@@ -10,7 +10,9 @@ req = Requirement.parse('roctool-odoo')
 
 def load_csv(ctx, path, model, header=None, header_exclude=None, **fmtparams):
     content = resource_stream(req, path)
-    load_csv_stream(ctx, model, content, header=header, header_exclude=header_exclude, **fmtparams)
+    load_csv_stream(ctx, model, content,
+                    header=header, header_exclude=header_exclude,
+                    **fmtparams)
 
 
 def load_users_csv(ctx, path, delimiter=','):
