@@ -1,5 +1,0 @@
-"id","active","bic","city","country/id","email","fax","name","phone","state/id","street","street2","zip"
-"__setup__.res_bank_banque_populaire","True","CCBPFRPPGRE","Chambéry","base.fr","","","BANQUE POPULAIRE","","","Banque Populaire Auvergne Rhône Alpes","159 Allée Albert Sylvestre","73000"
-"__setup__.res_bank_bnp_paribas","True","30004","","","","","BNP PARIBAS","","","","",""
-"__setup__.res_bank_credit_lyonnais","True","","","","","","CREDIT LYONNAIS","","","","",""
-"__setup__.res_bank_societe_generale","True","","Chambéry","base.fr","","","SOCIETE GENERALE","","","CHAMBERY ENTREPRISES","10 BD DE LA COLONNE","73000"
