@@ -92,7 +92,7 @@ migration:
           - anthem songs.install.crm::main
           - anthem  songs.install.products::main
           - anthem songs.install.general_settings::main
-          - anthem songs.install.generated.accounting::main
+#          - anthem songs.install.generated.accounting::main
           # - anthem songs.install.logistics::main
           # - anthem songs.install.data_all::main
       # modes:
@@ -164,7 +164,7 @@ migration:
         post:
           - anthem songs.upgrade.10_0_21.mrp_settings::main
           - anthem songs.install.expense_journals::main
-          - anthem songs.install.generated.accounting::main
+#          - anthem songs.install.generated.accounting::main
       addons:
         upgrade:
           - account_lock_date_update
