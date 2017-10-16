@@ -45,6 +45,8 @@ Latest (unreleased)
 * Fixed lots and serial number generation for purchase orders
   with product quantity more than one BSRTL-239
 
+* Fix Expense, post journal entries crashes BSRTL-249
+
 **Build**
 
 **Documentation**
