@@ -5,11 +5,11 @@
 
 coa_dict = {
     'base.main_company': 'l10n_fr.l10n_fr_pcg_chart_template',
-    '__setup__.roctool_inc': 'l10n_generic_coa.configurable_chart_template',
-    '__setup__.roctool_gmbh': 'l10n_de_skr03.l10n_de_chart_template',
-    # '__setup__.roctool_taiwan': 'l10n_jp.l10n_jp1',
-    '__setup__.roctool_japan': 'l10n_jp.l10n_jp1',
-    '__setup__.roctool_china': None,
+    '__setup__.roctool_inc': False,
+    '__setup__.roctool_gmbh': False,
+    '__setup__.roctool_taiwan': False,
+    '__setup__.roctool_japan': False,
+    '__setup__.roctool_china': False,
 }
 
 crm_stages = [

@@ -7,31 +7,21 @@ migration:
         pre:
           - anthem songs.install.pre::main
         post:
-          - anthem odoo.addons.cloud_platform.songs::install_exoscale
-          - anthem songs.install.multi_company::main
-          - anthem songs.install.accounting::main
-          - anthem songs.install.users::main
-          - anthem songs.install.sale::main
-          - anthem songs.install.users::main
-          - anthem songs.install.crm::main
-          - anthem  songs.install.products::main
-          - anthem songs.install.general_settings::main
-          # - anthem songs.install.logistics::main
-          # - anthem songs.install.data_all::main
-      # modes:
-      #   full:
-      #     operations:
-      #       post:
-      #         - anthem songs.install.data_full::main
-      #   demo:
-      #     operations:
-      #       post:
-      #         - anthem songs.install.data_demo::main
+          - anthem odoo.addons.cloud_platform.songs::install_ovh
       addons:
         upgrade:
           - cloud_platform_ovh
           #### core
           - account
+          - account_plaid
+          - account_yodlee
+          - account_sepa
+          - base_dj
+          - l10n_fr
+          - l10n_fr_certification
+    - version: 10.0.1
+      addons:
+        upgrade:
           - crm
           - document
           - hr
@@ -46,9 +36,8 @@ migration:
           - hr_holidays
           - hr_maintenance
           - intrastat_base
-          - l10n_de_skr03
-          - l10n_cn
-          - l10n_fr
+          - l10n_de_skr04
+          - l10n_cn_small_business
           - l10n_jp
           - l10n_us
           - maintenance
@@ -65,7 +54,6 @@ migration:
           - website_quote
           - website_sale
           - website_sale_options
-          #- website_contract
           #### external src
           - hr_expense_usability
           - hs_code_link
@@ -93,7 +81,28 @@ migration:
           - specific_purchase
           - specific_sale
           - specific_security
-          #- specific_subscription
+    - version: 10.0.2
+      operations:
+        post:
+          - anthem songs.install.multi_company::main
+          - anthem songs.install.accounting::main
+          - anthem songs.install.users::main
+          - anthem songs.install.sale::main
+          - anthem songs.install.users::main
+          - anthem songs.install.crm::main
+          - anthem  songs.install.products::main
+          - anthem songs.install.general_settings::main
+          # - anthem songs.install.logistics::main
+          # - anthem songs.install.data_all::main
+      # modes:
+      #   full:
+      #     operations:
+      #       post:
+      #         - anthem songs.install.data_full::main
+      #   demo:
+      #     operations:
+      #       post:
+      #         - anthem songs.install.data_demo::main
     - version: 10.0.4
       operations:
         post:
