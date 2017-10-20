@@ -82,7 +82,9 @@ class SaleOrder(models.Model):
             if record.qty_delivered and record.price_unit:
                 result = record.qty_delivered * record.price_unit
                 currency_from = record.order_id.pricelist_id.currency_id
-                record.amount_delivered_currency = currency_from.compute(result, record.company_currency_id)
+                record.amount_delivered_currency = currency_from.compute(
+                    result, record.company_currency_id
+                )
 
     @api.depends("qty_invoiced", "price_unit")
     def _compute_amount_invoiced_currency(self):
@@ -90,7 +92,9 @@ class SaleOrder(models.Model):
             if record.qty_invoiced and record.price_unit:
                 result = record.qty_invoiced * record.price_unit
                 currency_from = record.order_id.pricelist_id.currency_id
-                record.amount_invoiced_currency = currency_from.compute(result, record.company_currency_id)
+                record.amount_invoiced_currency = currency_from.compute(
+                    result, record.company_currency_id
+                )
 
     @api.depends("qty_delivered", "price_unit")
     def _compute_amount_delivered_holding_currency(self):
@@ -98,7 +102,8 @@ class SaleOrder(models.Model):
             if record.qty_delivered and record.price_unit:
                 result = record.qty_delivered * record.price_unit
                 currency_from = record.order_id.pricelist_id.currency_id
-                record.amount_delivered_holding_currency = currency_from.compute(result, record.holding_currency_id)
+                record.amount_delivered_holding_currency = \
+                    currency_from.compute(result, record.holding_currency_id)
 
     @api.depends("qty_invoiced", "price_unit")
     def _compute_amount_invoiced_holding_currency(self):
@@ -106,4 +111,5 @@ class SaleOrder(models.Model):
             if record.qty_invoiced and record.price_unit:
                 result = record.qty_invoiced * record.price_unit
                 currency_from = record.order_id.pricelist_id.currency_id
-                record.amount_invoiced_holding_currency = currency_from.compute(result, record.holding_currency_id)
+                record.amount_invoiced_holding_currency = \
+                    currency_from.compute(result, record.holding_currency_id)
