@@ -22,6 +22,18 @@ Latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.1.0 (2017-10-20)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Add new module from PR account_lock_date_update BSRTL-247
 * Fix intrastat documents generation if no hs_code on simple product BSRTL-251
 * Moved project configuration group in sale order BSRTL-243
