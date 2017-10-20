@@ -174,3 +174,7 @@ migration:
           - specific_analytic_tag_dimension
           - sale_order_invoicing_finished_task
     - version: 10.1.0
+    - version: 10.1.1
+      addons:
+        upgrade:
+          - specific_sale

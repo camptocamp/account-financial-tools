@@ -22,6 +22,8 @@ Latest (unreleased)
 
 **Features and Improvements**
 
+* Add computed fields to sale order lines BSRTL-259
+
 **Bugfixes**
 
 **Build**

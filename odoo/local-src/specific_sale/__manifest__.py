@@ -30,6 +30,7 @@
         'views/so_mail_template.xml',
         'views/stock_picking.xml',
         'views/sale_order.xml',
+        'views/sale_order_line.xml',
         'views/sale_order_crm.xml',
         'data/res_groups_data.xml',
         'security/ir.model.access.csv',
