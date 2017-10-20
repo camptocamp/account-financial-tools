@@ -6,7 +6,7 @@
 from odoo import models, fields, api
 
 
-class SaleOrder(models.Model):
+class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
     amount_delivered = fields.Float(
@@ -23,12 +23,16 @@ class SaleOrder(models.Model):
 
     company_currency_id = fields.Many2one(
         comodel_name="res.currency",
-        related="company_id.currency_id"
+        related="company_id.currency_id",
+        store=True,
+        readonly=True,
     )
 
     holding_currency_id = fields.Many2one(
         comodel_name="res.currency",
         related="order_id.holding_currency_id",
+        store=True,
+        readonly=True,
     )
 
     amount_delivered_currency = fields.Monetary(
@@ -76,7 +80,7 @@ class SaleOrder(models.Model):
                 record.amount_invoiced = record.qty_invoiced \
                                           * record.price_unit
 
-    @api.depends("qty_delivered", "price_unit")
+    @api.depends("qty_delivered", "price_unit", "company_currency_id")
     def _compute_amount_delivered_currency(self):
         for record in self:
             if record.qty_delivered and record.price_unit:
@@ -86,7 +90,7 @@ class SaleOrder(models.Model):
                     result, record.company_currency_id
                 )
 
-    @api.depends("qty_invoiced", "price_unit")
+    @api.depends("qty_invoiced", "price_unit", "company_currency_id")
     def _compute_amount_invoiced_currency(self):
         for record in self:
             if record.qty_invoiced and record.price_unit:
@@ -96,7 +100,7 @@ class SaleOrder(models.Model):
                     result, record.company_currency_id
                 )
 
-    @api.depends("qty_delivered", "price_unit")
+    @api.depends("qty_delivered", "price_unit", "holding_currency_id")
     def _compute_amount_delivered_holding_currency(self):
         for record in self:
             if record.qty_delivered and record.price_unit:
@@ -105,7 +109,7 @@ class SaleOrder(models.Model):
                 record.amount_delivered_holding_currency = \
                     currency_from.compute(result, record.holding_currency_id)
 
-    @api.depends("qty_invoiced", "price_unit")
+    @api.depends("qty_invoiced", "price_unit", "holding_currency_id")
     def _compute_amount_invoiced_holding_currency(self):
         for record in self:
             if record.qty_invoiced and record.price_unit:

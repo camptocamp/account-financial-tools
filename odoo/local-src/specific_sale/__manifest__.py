@@ -33,6 +33,7 @@
         'views/sale_order_line.xml',
         'views/sale_order_crm.xml',
         'data/res_groups_data.xml',
+        'reports/sale_order_line_pivot.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,
