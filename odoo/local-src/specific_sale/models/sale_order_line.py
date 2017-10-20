@@ -63,9 +63,6 @@ class SaleOrderLine(models.Model):
         store=True,
     )
 
-    # qty_delivered, qty_invoiced, order_id(sale order),
-    # product_uom_qty(quantity), price_unit
-
     @api.depends("qty_delivered", "price_unit")
     def _compute_amount_delivered(self):
         for record in self:
