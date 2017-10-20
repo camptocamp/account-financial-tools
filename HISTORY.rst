@@ -38,6 +38,7 @@ Latest (unreleased)
 * BOM: include project name in name_get + name_search BSRTL-241
 * Add song to create expense journals, this is configurable in account.settings
   BSRTL-252
+* Update pending-merge OCA/sale-workflow#485 in favour of OCA/sale-workflow#500 BSRTL-208
 
 **Bugfixes**
 * Fix triple validation of sale order required BSRTL-204
