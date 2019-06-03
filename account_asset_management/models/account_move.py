@@ -116,6 +116,7 @@ class AccountMoveLine(models.Model):
     @api.multi
     def write(self, vals):
         # Check if at least one asset is linked to a move
+        linked_asset = False
         for move in self:
             linked_asset = move.asset_id
             if linked_asset:
