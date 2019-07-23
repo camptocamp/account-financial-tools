@@ -90,7 +90,8 @@ class CreditControlPolicy(models.Model):
         # The lines which are linked to this policy have to be included in the
         # run for this policy.
         # If another object override the credit_policy_id (ie. invoice after
-        add_objs = my_obj.search([('credit_policy_id', '=', self.id)])
+        add_objs = my_obj.with_context(active_test=False).search([
+            ('credit_policy_id', '=', self.id)])
         if add_objs:
             domain = list(default_domain)
             domain.append((move_relation_field, 'in', add_objs.ids))
@@ -98,8 +99,9 @@ class CreditControlPolicy(models.Model):
 
         # The lines which are linked to another policy do not have to be
         # included in the run for this policy.
-        neg_objs = my_obj.search([('credit_policy_id', '!=', self.id),
-                                  ('credit_policy_id', '!=', False)])
+        neg_objs = my_obj.with_context(active_test=False).search([
+            ('credit_policy_id', '!=', self.id),
+            ('credit_policy_id', '!=', False)])
         if neg_objs:
             domain = list(default_domain)
             domain.append((move_relation_field, 'in', neg_objs.ids))
