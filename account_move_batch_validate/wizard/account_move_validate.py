@@ -1,5 +1,5 @@
 # Copyright 2014 Camptocamp SA, 2017 ACSONE
-# Copyright 2018 Camptocamp SA
+# Copyright 2019 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import logging
@@ -42,7 +42,7 @@ class AccountMoveValidate(models.TransientModel):
         self.ensure_one()
 
         if not self.asynchronous:
-            return super(AccountMoveValidate, self).validate_move()
+            return super().validate_move()
 
         wizard_data = {
             'move_ids': self.env.context.get('active_ids'),
