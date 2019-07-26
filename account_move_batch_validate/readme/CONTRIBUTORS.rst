@@ -1,4 +1,3 @@
-
 * Leonardo Pistone <leonardo.pistone@camptocamp.com>
 * Nicolas Bessi <nicolas.bessi@camptocamp.com>
 * Rudolf Schnapka <rs@techno-flex.de>
