@@ -4,7 +4,7 @@
 
 import logging
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 _logger = logging.getLogger(__name__)
 
@@ -33,8 +33,8 @@ class AccountMoveValidate(models.TransientModel):
     @api.model
     def _get_actions(self):
         return [
-            ('mark', 'Mark for posting'),
-            ('unmark', 'Unmark for posting')
+            ('mark', _('Mark for posting')),
+            ('unmark', _('Unmark for posting'))
         ]
 
     @api.multi
