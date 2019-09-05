@@ -89,7 +89,10 @@ class CreditCommunication(models.TransientModel):
         """ Return a valid email for customer """
         self.ensure_one()
         contact = self.contact_address
-        return contact.email
+        email = contact.email
+        if (not email and contact.parent_id and contact.parent_id.email):
+            email = contact.parent_id.email
+        return email
 
     @api.multi
     @api.returns('res.partner')
