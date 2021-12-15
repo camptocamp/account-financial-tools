@@ -30,6 +30,7 @@ setuptools.setup(
         'odoo10-addon-account_journal_lock_date',
         'odoo10-addon-account_lock_date_update',
         'odoo10-addon-account_move_batch_validate',
+        'odoo10-addon-account_move_chatter',
         'odoo10-addon-account_move_fiscal_month',
         'odoo10-addon-account_move_fiscal_year',
         'odoo10-addon-account_move_line_payable_receivable_filter',
@@ -53,5 +54,6 @@ setuptools.setup(
     classifiers=[
         'Programming Language :: Python',
         'Framework :: Odoo',
+        'Framework :: Odoo :: 10.0',
     ]
 )
