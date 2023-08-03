@@ -1079,24 +1079,25 @@ class WizardUpdateChartsAccounts(models.TransientModel):
         when the referenced accounts are still not available).
         """
         done = self.env["account.tax"]
-        for k, v in todo_dict["account_dict"]["account.tax"].items():
+        for tax, tpl_account_dict in todo_dict["account_dict"]["account.tax"].items():
             vals = {}
             for fld in [
                 "cash_basis_transition_account_id",
             ]:
-                if v[fld]:
+                if tpl_account_dict[fld]:
                     acc_id = self.find_account_by_templates(
-                        self.env["account.account.template"].browse(v[fld].id)
+                        self.env["account.account.template"].browse(
+                            tpl_account_dict[fld].id
+                        )
                     )
                     if acc_id:
                         vals[fld] = acc_id
                     else:
                         raise exceptions.UserError(
                             _("No real account found for template account with ID %s")
-                            % v[fld].id
+                            % tpl_account_dict[fld].id
                         )
             if vals:
-                tax = self.env["account.tax"].browse(k)
                 tax.write(vals)
                 done |= tax
 
