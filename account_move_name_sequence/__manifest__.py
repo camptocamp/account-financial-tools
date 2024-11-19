@@ -17,10 +17,12 @@
     "depends": [
         "account",
     ],
-    "demo": [
-        "demo/ir_sequence_demo.xml",
-        "demo/account_journal_demo.xml",
-    ],
+    # TODO: This conflicts with the account_online_sync enterprise addon
+    # which is automatically installed
+    # "demo": [
+        # "demo/ir_sequence_demo.xml",
+        # "demo/account_journal_demo.xml",
+    # ],
     "data": [
         "views/account_journal_views.xml",
         "views/account_move_views.xml",
