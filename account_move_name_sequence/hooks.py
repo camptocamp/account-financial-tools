@@ -13,7 +13,7 @@ def post_init_hook(env):
 def create_journal_sequences(env):
     journals = (
         env["account.journal"]
-        .with_context(active_test=False)
+        .with_context(active_test=False, mute_prepare_sequence_warning=True)
         .search([("sequence_id", "=", False)])
     )
     for journal in journals:

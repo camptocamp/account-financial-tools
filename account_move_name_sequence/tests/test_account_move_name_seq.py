@@ -5,30 +5,31 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from datetime import datetime
+from unittest.mock import patch
 
 from freezegun import freeze_time
 
-from odoo import fields
+from odoo import Command, fields
 from odoo.exceptions import UserError, ValidationError
-from odoo.tests import tagged
-from odoo.tests.common import Form, TransactionCase
+from odoo.tests import Form, TransactionCase, tagged
 
 
 @tagged("post_install", "-at_install")
 class TestAccountMoveNameSequence(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.company = self.env.ref("base.main_company")
-        self.partner = self.env.ref("base.res_partner_3")
-        self.misc_journal = self.env["account.journal"].create(
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.company = cls.env.ref("base.main_company")
+        cls.partner = cls.env.ref("base.res_partner_3")
+        cls.misc_journal = cls.env["account.journal"].create(
             {
                 "name": "Test Journal Move name seq",
                 "code": "ADLM",
                 "type": "general",
-                "company_id": self.company.id,
+                "company_id": cls.company.id,
             }
         )
-        self.sales_seq = self.env["ir.sequence"].create(
+        cls.sales_seq = cls.env["ir.sequence"].create(
             {
                 "name": "TB2C",
                 "implementation": "no_gap",
@@ -36,34 +37,38 @@ class TestAccountMoveNameSequence(TransactionCase):
                 "use_date_range": True,
                 "number_increment": 1,
                 "padding": 4,
-                "company_id": self.company.id,
+                "company_id": cls.company.id,
             }
         )
-        self.sales_journal = self.env["account.journal"].create(
+        cls.sales_journal = cls.env["account.journal"].create(
             {
                 "name": "TB2C",
                 "code": "TB2C",
                 "type": "sale",
-                "company_id": self.company.id,
+                "company_id": cls.company.id,
                 "refund_sequence": True,
-                "sequence_id": self.sales_seq.id,
+                "sequence_id": cls.sales_seq.id,
             }
         )
-        self.purchase_journal = self.env["account.journal"].create(
+        cls.purchase_journal = cls.env["account.journal"].create(
             {
                 "name": "Test Purchase Journal Move name seq",
                 "code": "ADLP",
                 "type": "purchase",
-                "company_id": self.company.id,
+                "company_id": cls.company.id,
                 "refund_sequence": True,
             }
         )
-        self.accounts = self.env["account.account"].search(
-            [("company_id", "=", self.company.id)], limit=2
+        cls.accounts = cls.env["account.account"].search(
+            [("company_ids", "=", cls.company.id)], limit=2
         )
-        self.account1 = self.accounts[0]
-        self.account2 = self.accounts[1]
-        self.date = datetime.now()
+        cls.account1 = cls.accounts[0]
+        cls.account2 = cls.accounts[1]
+        cls.date = datetime.now()
+
+        cls.journals = cls.misc_journal | cls.purchase_journal | cls.sales_journal
+        with patch("odoo.models.BaseModel._validate_fields"):
+            cls.journals.restrict_mode_hash_table = False
 
     def test_seq_creation(self):
         self.assertTrue(self.misc_journal.sequence_id)
@@ -86,8 +91,8 @@ class TestAccountMoveNameSequence(TransactionCase):
                 "date": self.date,
                 "journal_id": self.misc_journal.id,
                 "line_ids": [
-                    (0, 0, {"account_id": self.account1.id, "debit": 10}),
-                    (0, 0, {"account_id": self.account2.id, "credit": 10}),
+                    Command.create({"account_id": self.account1.id, "debit": 10}),
+                    Command.create({"account_id": self.account2.id, "credit": 10}),
                 ],
             }
         )
@@ -125,8 +130,8 @@ class TestAccountMoveNameSequence(TransactionCase):
                     "date": "2021-12-31",
                     "journal_id": self.misc_journal.id,
                     "line_ids": [
-                        (0, 0, {"account_id": self.account1.id, "debit": 10}),
-                        (0, 0, {"account_id": self.account2.id, "credit": 10}),
+                        Command.create({"account_id": self.account1.id, "debit": 10}),
+                        Command.create({"account_id": self.account2.id, "credit": 10}),
                     ],
                 }
             )
@@ -138,8 +143,8 @@ class TestAccountMoveNameSequence(TransactionCase):
                     "date": "2022-06-30",
                     "journal_id": self.misc_journal.id,
                     "line_ids": [
-                        (0, 0, {"account_id": self.account1.id, "debit": 10}),
-                        (0, 0, {"account_id": self.account2.id, "credit": 10}),
+                        Command.create({"account_id": self.account1.id, "debit": 10}),
+                        Command.create({"account_id": self.account2.id, "credit": 10}),
                     ],
                 }
             )
@@ -152,13 +157,47 @@ class TestAccountMoveNameSequence(TransactionCase):
                     "date": "2022-07-01",
                     "journal_id": self.misc_journal.id,
                     "line_ids": [
-                        (0, 0, {"account_id": self.account1.id, "debit": 10}),
-                        (0, 0, {"account_id": self.account2.id, "credit": 10}),
+                        Command.create({"account_id": self.account1.id, "debit": 10}),
+                        Command.create({"account_id": self.account2.id, "credit": 10}),
                     ],
                 }
             )
             move.action_post()
         self.assertEqual(move.name, "TEST-2022-07-0001")
+
+    def test_prefix_move_name_use_move_date_2(self):
+        seq = self.misc_journal.sequence_id
+        seq.prefix = "TEST-%(range_month)s-"
+        with freeze_time("2022-01-01"):
+            move = self.env["account.move"].create(
+                {
+                    "date": "2022-06-30",
+                    "journal_id": self.misc_journal.id,
+                    "line_ids": [
+                        Command.create({"account_id": self.account1.id, "debit": 10}),
+                        Command.create({"account_id": self.account2.id, "credit": 10}),
+                    ],
+                }
+            )
+            move.action_post()
+        self.assertEqual(move.name, "TEST-06-0001")
+
+    def test_prefix_move_name_use_move_date_3(self):
+        seq = self.misc_journal.sequence_id
+        seq.prefix = "TEST-%(range_day)s-"
+        with freeze_time("2022-01-01"):
+            move = self.env["account.move"].create(
+                {
+                    "date": "2022-01-01",
+                    "journal_id": self.misc_journal.id,
+                    "line_ids": [
+                        Command.create({"account_id": self.account1.id, "debit": 10}),
+                        Command.create({"account_id": self.account2.id, "credit": 10}),
+                    ],
+                }
+            )
+            move.action_post()
+        self.assertEqual(move.name, "TEST-01-0001")
 
     def test_in_invoice_and_refund(self):
         in_invoice = self.env["account.move"].create(
@@ -168,23 +207,19 @@ class TestAccountMoveNameSequence(TransactionCase):
                 "partner_id": self.env.ref("base.res_partner_3").id,
                 "move_type": "in_invoice",
                 "invoice_line_ids": [
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "account_id": self.account1.id,
                             "price_unit": 42.0,
                             "quantity": 12,
-                        },
+                        }
                     ),
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "account_id": self.account1.id,
                             "price_unit": 48.0,
                             "quantity": 10,
-                        },
+                        }
                     ),
                 ],
             }
@@ -240,14 +275,12 @@ class TestAccountMoveNameSequence(TransactionCase):
                 "partner_id": self.env.ref("base.res_partner_3").id,
                 "move_type": "in_refund",
                 "invoice_line_ids": [
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "account_id": self.account1.id,
                             "price_unit": 42.0,
                             "quantity": 12,
-                        },
+                        }
                     )
                 ],
             }
@@ -268,14 +301,18 @@ class TestAccountMoveNameSequence(TransactionCase):
                 "date": self.date,
                 "journal_id": self.misc_journal.id,
                 "line_ids": [
-                    (0, 0, {"account_id": self.account1.id, "debit": 10}),
-                    (0, 0, {"account_id": self.account2.id, "credit": 10}),
+                    Command.create({"account_id": self.account1.id, "debit": 10}),
+                    Command.create({"account_id": self.account2.id, "credit": 10}),
                 ],
             }
         )
         self.assertEqual(invoice.name, "/")
         invoice.action_post()
-        error_msg = "You can't delete a posted journal item. Don’t play games with your accounting records; reset the journal entry to draft before deleting it."
+        error_msg = (
+            "You can't delete a posted journal item. "
+            "Don’t play games with your accounting records; "
+            "reset the journal entry to draft before deleting it."
+        )
         with self.assertRaisesRegex(UserError, error_msg):
             invoice.unlink()
         invoice.button_draft()
@@ -293,21 +330,23 @@ class TestAccountMoveNameSequence(TransactionCase):
                 "partner_id": self.env.ref("base.res_partner_3").id,
                 "move_type": "in_refund",
                 "invoice_line_ids": [
-                    (
-                        0,
-                        0,
+                    Command.create(
                         {
                             "account_id": self.account1.id,
                             "price_unit": 42.0,
                             "quantity": 12,
-                        },
+                        }
                     )
                 ],
             }
         )
         self.assertEqual(in_refund_invoice.name, "/")
         in_refund_invoice.action_post()
-        error_msg = "You can't delete a posted journal item. Don’t play games with your accounting records; reset the journal entry to draft before deleting it."
+        error_msg = (
+            "You can't delete a posted journal item. "
+            "Don’t play games with your accounting records; "
+            "reset the journal entry to draft before deleting it."
+        )
         with self.assertRaisesRegex(UserError, error_msg):
             in_refund_invoice.unlink()
         in_refund_invoice.button_draft()
@@ -315,7 +354,12 @@ class TestAccountMoveNameSequence(TransactionCase):
         self.assertTrue(in_refund_invoice.unlink())
 
     def test_journal_check_journal_sequence(self):
-        new_journal = self.purchase_journal.copy()
+        new_journal = self.purchase_journal.copy({"restrict_mode_hash_table": True})
+        self.env.cr.execute(
+            "UPDATE account_journal SET restrict_mode_hash_table = False WHERE id = %s",
+            (new_journal.id,),
+        )
+        self.env.invalidate_all()
         # same sequence_id and refund_sequence_id
         with self.assertRaises(ValidationError):
             new_journal.write({"refund_sequence_id": new_journal.sequence_id})
@@ -348,3 +392,24 @@ class TestAccountMoveNameSequence(TransactionCase):
         self.assertEqual(invoice.name, "/", "name based on journal instead of sequence")
         invoice.action_post()
         self.assertIn("TB2CSEQ/", invoice.name, "name was not based on sequence")
+
+    def test_is_end_of_seq_chain(self):
+        self.env.user.groups_id -= self.env.ref("account.group_account_manager")
+        invoice = self.env["account.move"].create(
+            {
+                "date": self.date,
+                "journal_id": self.misc_journal.id,
+                "line_ids": [
+                    Command.create({"account_id": self.account1.id, "debit": 10}),
+                    Command.create({"account_id": self.account2.id, "credit": 10}),
+                ],
+            }
+        )
+        invoice.action_post()
+        error_msg = (
+            "You cannot delete this entry, as it has already consumed "
+            "a sequence number and is not the last one in the chain. "
+            "You should probably revert it instead."
+        )
+        with self.assertRaisesRegex(UserError, error_msg):
+            invoice._unlink_forbid_parts_of_chain()
